@@ -1,0 +1,587 @@
+package com.example.isekaikuroshin.ui.inventory
+
+import androidx.compose.animation.core.*
+import com.example.isekaikuroshin.data.Currency
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.DirectionsWalk
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.isekaikuroshin.R
+import com.example.isekaikuroshin.ui.components.StandardCard
+import com.example.isekaikuroshin.ui.components.CardData
+import com.example.isekaikuroshin.ui.components.CardRarity
+import com.example.isekaikuroshin.ui.components.StatType
+import com.example.isekaikuroshin.ui.theme.IsekaiKuroshinTheme
+
+
+// Filter types for inventory
+enum class InventoryFilter(val displayName: String) {
+    ALL("Tümü"),
+    WEAPONS("Silahlar"),
+    ARMOR("Zırhlar"),
+    ACCESSORIES("Aksesuarlar"),
+    CONSUMABLES("Tüketilebilir")
+}
+
+@Composable
+fun InventoryScreen(
+    modifier: Modifier = Modifier,
+    viewModel: InventoryViewModel = viewModel(),
+    onBackPressed: () -> Unit = {}
+) {
+    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    var selectedFilter by remember { mutableStateOf(InventoryFilter.ALL) }
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFF0A0F1A))
+    ) {
+        // Top Info Panel
+        TopInfoPanel(
+            capacity = uiState.capacity,
+            currency = uiState.currency,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        )
+
+        // Main Content Row
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+                .padding(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            // Left Column - Equipment Slots
+            EquipmentSlotsPanel(
+                slots = uiState.equipmentSlots,
+                modifier = Modifier.weight(0.4f)
+            )
+
+            // Right Column - Inventory Items
+            InventoryItemsPanel(
+                items = uiState.inventoryItems,
+                selectedFilter = selectedFilter,
+                onFilterChanged = { selectedFilter = it },
+                modifier = Modifier.weight(0.6f)
+            )
+        }
+
+        // Bottom Info Panel
+        BottomInfoPanel(
+            gearScore = uiState.gearScore,
+            onBackPressed = onBackPressed,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        )
+
+    }
+}
+
+@Composable
+private fun TopInfoPanel(
+    capacity: String,
+    currency: Currency = Currency(),
+    modifier: Modifier = Modifier
+) {
+    val infiniteTransition = rememberInfiniteTransition(label = "top_panel_glow")
+    val glowAlpha by infiniteTransition.animateFloat(
+        initialValue = 0.2f,
+        targetValue = 0.5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(3000, easing = EaseInOut),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "glow_alpha"
+    )
+
+    Box(
+        modifier = modifier
+            .height(48.dp)
+            .background(
+                brush = Brush.horizontalGradient(
+                    colors = listOf(
+                        Color(0xFF0A0F1A).copy(alpha = 0.8f),
+                        Color(0xFF00BFFF).copy(alpha = 0.1f),
+                        Color(0xFF0A0F1A).copy(alpha = 0.8f)
+                    )
+                ),
+                shape = RoundedCornerShape(12.dp)
+            )
+            .border(
+                width = 1.dp,
+                color = Color(0xFF00BFFF).copy(alpha = glowAlpha),
+                shape = RoundedCornerShape(12.dp)
+            )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 20.dp, vertical = 12.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Text(
+                    text = "ENVANTER",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = Color(0xFF00BFFF),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp
+                )
+
+                Text(
+                    text = "• $capacity",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = Color(0xFFE0F2F1).copy(alpha = 0.8f),
+                    fontSize = 12.sp
+                )
+            }
+
+            // Currency Display
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = "💰",
+                    fontSize = 16.sp
+                )
+                Text(
+                    text = currency.toDisplayString(),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = Color(0xFFFFD700),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 14.sp
+                )
+                Text(
+                    text = "PARA",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = Color(0xFFE0F2F1).copy(alpha = 0.6f),
+                    fontSize = 10.sp
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun BottomInfoPanel(
+    gearScore: String,
+    onBackPressed: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val infiniteTransition = rememberInfiniteTransition(label = "bottom_panel_glow")
+    val glowAlpha by infiniteTransition.animateFloat(
+        initialValue = 0.2f,
+        targetValue = 0.5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(3000, easing = EaseInOut),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "glow_alpha"
+    )
+
+    Box(
+        modifier = modifier
+            .height(48.dp)
+            .background(
+                brush = Brush.horizontalGradient(
+                    colors = listOf(
+                        Color(0xFF0A0F1A).copy(alpha = 0.8f),
+                        Color(0xFF00BFFF).copy(alpha = 0.1f),
+                        Color(0xFF0A0F1A).copy(alpha = 0.8f)
+                    )
+                ),
+                shape = RoundedCornerShape(12.dp)
+            )
+            .border(
+                width = 1.dp,
+                color = Color(0xFF00BFFF).copy(alpha = glowAlpha),
+                shape = RoundedCornerShape(12.dp)
+            )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 20.dp, vertical = 12.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Text(
+                    text = "GS: $gearScore",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color(0xFF00BFFF).copy(alpha = 0.8f),
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.Medium
+                )
+
+                Button(
+                onClick = onBackPressed,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF00BFFF).copy(alpha = 0.2f),
+                    contentColor = Color(0xFF00BFFF)
+                ),
+                border = BorderStroke(
+                    1.dp,
+                    Color(0xFF00BFFF).copy(alpha = 0.7f)
+                ),
+                shape = RoundedCornerShape(8.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Geri",
+                    modifier = Modifier.size(16.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = "GERİ",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 12.sp
+                )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun EquipmentSlotsPanel(
+    slots: List<EquipmentSlotState>,
+    modifier: Modifier = Modifier
+) {
+    LazyVerticalGrid(
+        columns = GridCells.Fixed(3),
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        items(slots) { slot ->
+            CompactEquipmentSlot(
+                slotName = slot.slotName,
+                equippedItem = slot.item
+            )
+        }
+    }
+}
+
+@Composable
+private fun CompactEquipmentSlot(
+    slotName: String,
+    equippedItem: CardData.ItemCard?,
+    modifier: Modifier = Modifier
+) {
+    val infiniteTransition = rememberInfiniteTransition(label = "compact_slot_glow")
+    val borderAlpha by infiniteTransition.animateFloat(
+        initialValue = 0.2f,
+        targetValue = 0.4f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(2000, easing = EaseInOut),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "border_alpha"
+    )
+
+    Box(
+        modifier = modifier
+            .size(64.dp) // Çok daha küçük
+            .background(
+                color = if (equippedItem != null)
+                    equippedItem.rarity.color.copy(alpha = 0.1f)
+                else
+                    Color(0xFF0A0F1A).copy(alpha = 0.8f),
+                shape = RoundedCornerShape(8.dp)
+            )
+            .border(
+                width = 1.dp,
+                color = if (equippedItem != null)
+                    equippedItem.rarity.color.copy(alpha = 0.6f)
+                else
+                    Color(0xFF00BFFF).copy(alpha = borderAlpha),
+                shape = RoundedCornerShape(8.dp)
+            ),
+        contentAlignment = Alignment.Center
+    ) {
+        if (equippedItem != null) {
+            // Equipped item - sadece ikon
+            Icon(
+                imageVector = getSlotIcon(slotName),
+                contentDescription = slotName,
+                tint = equippedItem.rarity.color.copy(alpha = 0.9f),
+                modifier = Modifier.size(24.dp)
+            )
+        } else {
+            // Empty slot - sadece ikon
+            Icon(
+                imageVector = getSlotIcon(slotName),
+                contentDescription = slotName,
+                tint = Color(0xFF00BFFF).copy(alpha = 0.5f),
+                modifier = Modifier.size(20.dp)
+            )
+        }
+    }
+}
+
+@Composable
+private fun EquipmentSlot(
+    slotName: String,
+    equippedItem: CardData.ItemCard?,
+    modifier: Modifier = Modifier
+) {
+    val infiniteTransition = rememberInfiniteTransition(label = "slot_glow")
+    val borderAlpha by infiniteTransition.animateFloat(
+        initialValue = 0.2f,
+        targetValue = 0.5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1500, easing = EaseInOut),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "border_alpha"
+    )
+
+    if (equippedItem != null) {
+        // Equipped slot with miniature StandardCard using equipment type icon
+        Box(
+            modifier = modifier.height(120.dp)
+        ) {
+            val equipmentTypeIcon = getEquipmentTypeIcon(equippedItem.name)
+            StandardCard(
+                data = equippedItem.copy(imageRes = equipmentTypeIcon),
+                modifier = Modifier.fillMaxSize()
+            )
+        }
+    } else {
+        // Empty slot
+        Box(
+            modifier = modifier
+                .height(120.dp)
+                .background(
+                    color = Color(0xFF0A0F1A).copy(alpha = 0.8f),
+                    shape = RoundedCornerShape(12.dp)
+                )
+                .border(
+                    width = 1.dp,
+                    color = Color(0xFF00BFFF).copy(alpha = borderAlpha),
+                    shape = RoundedCornerShape(12.dp)
+                ),
+            contentAlignment = Alignment.Center
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Icon(
+                    imageVector = getSlotIcon(slotName),
+                    contentDescription = slotName,
+                    tint = Color(0xFF00BFFF).copy(alpha = 0.6f),
+                    modifier = Modifier.size(32.dp)
+                )
+                Text(
+                    text = slotName,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = Color(0xFFE0F2F1).copy(alpha = 0.7f),
+                    fontSize = 12.sp,
+                    textAlign = TextAlign.Center,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun InventoryItemsPanel(
+    items: List<CardData.ItemCard>,
+    selectedFilter: InventoryFilter,
+    onFilterChanged: (InventoryFilter) -> Unit,
+    modifier: Modifier = Modifier
+) {
+        LazyColumn(
+            modifier = modifier,
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            items(items) { item ->
+                val equipmentTypeIcon = getEquipmentTypeIcon(item.name)
+                StandardCard(
+                    data = item.copy(imageRes = equipmentTypeIcon),
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        }
+}
+
+@Composable
+private fun FilterButtons(
+    selectedFilter: InventoryFilter,
+    onFilterChanged: (InventoryFilter) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        InventoryFilter.entries.forEach { filter ->
+            FilterButton(
+                filter = filter,
+                isSelected = selectedFilter == filter,
+                onClick = { onFilterChanged(filter) },
+                modifier = Modifier.weight(1f)
+            )
+        }
+    }
+}
+
+@Composable
+private fun FilterButton(
+    filter: InventoryFilter,
+    isSelected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val animatedAlpha by animateFloatAsState(
+        targetValue = if (isSelected) 1f else 0.6f,
+        animationSpec = tween(200),
+        label = "filter_alpha"
+    )
+
+    Button(
+        onClick = onClick,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = if (isSelected)
+                Color(0xFF00BFFF).copy(alpha = 0.3f)
+            else
+                Color(0xFF0A0F1A).copy(alpha = 0.8f),
+            contentColor = Color(0xFF00BFFF).copy(alpha = animatedAlpha)
+        ),
+        border = BorderStroke(
+            1.dp,
+            Color(0xFF00BFFF).copy(alpha = if (isSelected) 0.8f else 0.4f)
+        ),
+        shape = RoundedCornerShape(8.dp),
+        modifier = modifier.height(36.dp)
+    ) {
+        Text(
+            text = filter.displayName,
+            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+            fontSize = 11.sp,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis
+        )
+    }
+}
+
+// Helper function to get equipment type icon resource based on item type
+private fun getEquipmentTypeIcon(itemName: String): Int {
+    val lowerCaseName = itemName.lowercase()
+    return when {
+        lowerCaseName.contains("sword") || lowerCaseName.contains("kilic") || lowerCaseName.contains("kılıç") -> R.drawable.icon_kilic_seviye1
+        lowerCaseName.contains("helmet") || lowerCaseName.contains("migfer") || lowerCaseName.contains("kafa") -> R.drawable.icon_migfer_seviye1
+        lowerCaseName.contains("dagger") || lowerCaseName.contains("hancer") || lowerCaseName.contains("hançer") -> R.drawable.icon_hancer_seviye1
+        lowerCaseName.contains("bow") || lowerCaseName.contains("yay") -> R.drawable.icon_yay_seviye1
+        lowerCaseName.contains("potion") || lowerCaseName.contains("iksir") || lowerCaseName.contains("şişe") -> R.drawable.icon_iksir_seviye1
+        else -> R.drawable.icon_kilic_seviye1 // Default to sword icon
+    }
+}
+
+// Helper function to get appropriate icon for equipment slots
+private fun getSlotIcon(slotName: String): ImageVector {
+    return when (slotName) {
+        "Kafa" -> Icons.Default.Security
+        "Boyun" -> Icons.Default.Circle
+        "Göğüs" -> Icons.Default.Shield
+        "Bacaklar" -> Icons.Default.Straighten
+        "Eldivenler" -> Icons.Default.PanTool
+        "Ayakkabılar" -> Icons.AutoMirrored.Filled.DirectionsWalk
+        "Ana El", "Yan El" -> Icons.Default.Build
+        "Yüzük 1", "Yüzük 2" -> Icons.Default.Circle
+        "Küpe 1", "Küpe 2" -> Icons.Default.Brightness1
+        "Aura" -> Icons.Default.Flare
+        "Relic 1", "Relic 2" -> Icons.Default.AutoAwesome
+        "Evcil Hayvan" -> Icons.Default.Pets
+        else -> Icons.Default.Category
+    }
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFF0A0F1A)
+@Composable
+private fun InventoryScreenPreview() {
+    IsekaiKuroshinTheme {
+        InventoryScreen()
+    }
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFF0A0F1A, widthDp = 400, heightDp = 200)
+@Composable
+private fun EquipmentSlotPreview() {
+    IsekaiKuroshinTheme {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color(0xFF0A0F1A))
+                .padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            // Empty slot
+            EquipmentSlot(
+                slotName = "Kafa",
+                equippedItem = null,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            // Equipped slot
+            EquipmentSlot(
+                slotName = "Ana El",
+                equippedItem = CardData.ItemCard(
+                    id = "sample_sword",
+                    name = "Test Kılıcı",
+                    description = "Test için örnek kılıç",
+                    imageRes = android.R.drawable.star_on,
+                    rarity = CardRarity.RARE,
+                    durability = 90,
+                    gearScore = 150,
+                    statBonuses = mapOf(StatType.STR_PERCENT to 0.10f)
+                ),
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+    }
+}
+
+// --- Sub-components for Inventory Screen ---
+
+// Old components removed - replaced with new StandardCard-based design

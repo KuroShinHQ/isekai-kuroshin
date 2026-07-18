@@ -1,0 +1,641 @@
+package com.example.isekaikuroshin.ui.journal
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.background
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
+import androidx.media3.common.MediaItem
+import androidx.media3.common.util.UnstableApi
+import androidx.media3.exoplayer.ExoPlayer
+import androidx.media3.ui.PlayerView
+import com.example.isekaikuroshin.R
+import com.example.isekaikuroshin.data.GameStateManager
+import kotlinx.coroutines.delay
+
+
+enum class PageState {
+    CLOSED,
+    OPENING,
+    READING,
+    PAGE_TURNING,
+    REVERSE_PAGE_TURNING,
+    NEW_PAGE,
+    FINISHING
+}
+
+@UnstableApi
+@Composable
+fun JournalScreen(onBackToDashboard: (() -> Unit)? = null) {
+    var pageState by remember { mutableStateOf(PageState.OPENING) }
+    var currentPage by remember { mutableIntStateOf(1) }
+    var storyPages by remember { mutableStateOf(GameStateManager.gameState.storyPages) }
+    var userInput1 by remember { mutableStateOf("") }
+    var userInput2 by remember { mutableStateOf("") }
+    var userInput3 by remember { mutableStateOf("") }
+    var showPageSelector by remember { mutableStateOf(false) }
+    var isTimeDisplayExpanded by remember { mutableStateOf(true) }
+    var currentDemonBg by remember { mutableIntStateOf(0) }
+    val context = LocalContext.current
+
+    // ExoPlayer for animations
+    val exoPlayer = remember(context) {
+        ExoPlayer.Builder(context).build()
+    }
+
+    // Character limit per page
+    val maxCharsPerPage = 800
+
+    // Demon background slideshow resources (18 images total: 00-17)
+    val demonBgResources = remember {
+        listOf(
+            R.drawable.demon_bg_00, R.drawable.demon_bg_01, R.drawable.demon_bg_02,
+            R.drawable.demon_bg_03, R.drawable.demon_bg_04, R.drawable.demon_bg_05,
+            R.drawable.demon_bg_06, R.drawable.demon_bg_07, R.drawable.demon_bg_08,
+            R.drawable.demon_bg_09, R.drawable.demon_bg_10, R.drawable.demon_bg_11,
+            R.drawable.demon_bg_12, R.drawable.demon_bg_13, R.drawable.demon_bg_14,
+            R.drawable.demon_bg_15, R.drawable.demon_bg_16, R.drawable.demon_bg_17
+        )
+    }
+
+    // Background slideshow during video animations
+    LaunchedEffect(pageState) {
+        if (pageState in listOf(PageState.OPENING, PageState.PAGE_TURNING, PageState.REVERSE_PAGE_TURNING, PageState.FINISHING)) {
+            while (pageState in listOf(PageState.OPENING, PageState.PAGE_TURNING, PageState.REVERSE_PAGE_TURNING, PageState.FINISHING)) {
+                currentDemonBg = (currentDemonBg + 1) % demonBgResources.size
+                delay(2000) // Change background every 2 seconds
+            }
+        }
+    }
+
+    // Auto page turn when current page gets too long
+    LaunchedEffect(storyPages) {
+        val currentPageText = storyPages.getOrNull(currentPage - 1) ?: ""
+        if (currentPageText.length > maxCharsPerPage && pageState == PageState.READING) {
+            pageState = PageState.PAGE_TURNING
+            delay(100) // Small delay before starting animation
+        }
+    }
+
+    // Handle page turning animation with video completion detection
+    LaunchedEffect(pageState) {
+        when (pageState) {
+            PageState.OPENING -> {
+                val mediaItem = MediaItem.fromUri("android.resource://${context.packageName}/${R.raw.book_opening}")
+                exoPlayer.setMediaItem(mediaItem)
+
+                // Add listener for video completion
+                val listener = object : androidx.media3.common.Player.Listener {
+                    override fun onPlaybackStateChanged(playbackState: Int) {
+                        if (playbackState == androidx.media3.common.Player.STATE_ENDED) {
+                            exoPlayer.removeListener(this)
+                            pageState = PageState.READING
+                        }
+                    }
+                }
+                exoPlayer.addListener(listener)
+                exoPlayer.prepare()
+                exoPlayer.play()
+            }
+            PageState.PAGE_TURNING -> {
+                val mediaItem = MediaItem.fromUri("android.resource://${context.packageName}/${R.raw.sayfacevirme}")
+                exoPlayer.setMediaItem(mediaItem)
+
+                // Add listener for video completion
+                val listener = object : androidx.media3.common.Player.Listener {
+                    override fun onPlaybackStateChanged(playbackState: Int) {
+                        if (playbackState == androidx.media3.common.Player.STATE_ENDED) {
+                            exoPlayer.removeListener(this)
+
+                            // Create new page and clear current page
+                            val currentPageText = storyPages.getOrNull(currentPage - 1) ?: ""
+                            val updatedPages = storyPages.toMutableList()
+                            updatedPages[currentPage - 1] = currentPageText
+                            updatedPages.add("") // Add new empty page
+                            storyPages = updatedPages
+                            currentPage += 1
+                            pageState = PageState.NEW_PAGE
+                        }
+                    }
+                }
+                exoPlayer.addListener(listener)
+                exoPlayer.prepare()
+                exoPlayer.play()
+            }
+            PageState.NEW_PAGE -> {
+                delay(500)
+                pageState = PageState.READING
+            }
+            PageState.REVERSE_PAGE_TURNING -> {
+                println("DEBUG: REVERSE_PAGE_TURNING triggered, currentPage: $currentPage")
+                val mediaItem = MediaItem.fromUri("android.resource://${context.packageName}/${R.raw.reverse_page_turning}")
+                exoPlayer.setMediaItem(mediaItem)
+
+                // Add listener for video completion
+                val listener = object : androidx.media3.common.Player.Listener {
+                    override fun onPlaybackStateChanged(playbackState: Int) {
+                        if (playbackState == androidx.media3.common.Player.STATE_ENDED) {
+                            exoPlayer.removeListener(this)
+
+                            // Go to previous page
+                            currentPage -= 1
+                            println("DEBUG: After reverse page turn, currentPage: $currentPage")
+                            pageState = PageState.READING
+                        }
+                    }
+                }
+                exoPlayer.addListener(listener)
+                exoPlayer.prepare()
+                exoPlayer.play()
+            }
+            PageState.FINISHING -> {
+                val mediaItem = MediaItem.fromUri("android.resource://${context.packageName}/${R.raw.book_closing}")
+                exoPlayer.setMediaItem(mediaItem)
+
+                // Add listener for video completion
+                val listener = object : androidx.media3.common.Player.Listener {
+                    override fun onPlaybackStateChanged(playbackState: Int) {
+                        if (playbackState == androidx.media3.common.Player.STATE_ENDED) {
+                            exoPlayer.removeListener(this)
+                            onBackToDashboard?.invoke() // Go to dashboard after animation
+                        }
+                    }
+                }
+                exoPlayer.addListener(listener)
+                exoPlayer.prepare()
+                exoPlayer.play()
+            }
+            else -> {
+                exoPlayer.pause()
+            }
+        }
+    }
+
+    DisposableEffect(Unit) {
+        onDispose {
+            exoPlayer.release()
+        }
+    }
+
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        when (pageState) {
+            PageState.CLOSED -> {
+                // Book Closed State
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = "📖",
+                        fontSize = 120.sp
+                    )
+
+                    Spacer(modifier = Modifier.height(32.dp))
+
+                    Button(
+                        onClick = { pageState = PageState.OPENING },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFF8B4513)
+                        )
+                    ) {
+                        Text("Open Mystical Journal", color = Color.White)
+                    }
+                }
+            }
+
+            PageState.OPENING, PageState.PAGE_TURNING, PageState.REVERSE_PAGE_TURNING, PageState.FINISHING -> {
+                // Background slideshow during video animations
+                Image(
+                    painter = painterResource(id = demonBgResources[currentDemonBg]),
+                    contentDescription = "Demon Background",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
+
+                // Video animation overlay with transparent background
+                AndroidView(
+                    factory = { context ->
+                        PlayerView(context).apply {
+                            player = exoPlayer
+                            useController = false
+                            setShowBuffering(PlayerView.SHOW_BUFFERING_NEVER)
+                            resizeMode = androidx.media3.ui.AspectRatioFrameLayout.RESIZE_MODE_FIT
+                            // Make PlayerView background transparent
+                            setBackgroundColor(android.graphics.Color.TRANSPARENT)
+                            // Make video surface transparent for non-video areas
+                            alpha = 0.95f // Slight transparency so demon bg shows through
+                        }
+                    },
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
+
+            PageState.READING, PageState.NEW_PAGE -> {
+                // Book Page Background - Based on day number for day progression
+                val gameState = GameStateManager.gameState
+                val isEvenDay = gameState.currentDay % 2 == 0
+                Image(
+                    painter = painterResource(
+                        id = if (isEvenDay) R.drawable.right_page else R.drawable.left_page
+                    ),
+                    contentDescription = "Mystical Journal Page",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
+
+                // Dashboard Return Arrow (Left Side, Lower)
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.CenterStart)
+                        .padding(start = 16.dp)
+                        .size(56.dp)
+                        .background(
+                            color = Color(0xFF8B4513).copy(alpha = 0.2f),
+                            shape = CircleShape
+                        )
+                        .clickable(
+                            interactionSource = remember { MutableInteractionSource() },
+                            indication = null
+                        ) {
+                            pageState = PageState.FINISHING
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "Back to Dashboard",
+                        tint = Color(0xFF8B4513),
+                        modifier = Modifier.size(28.dp)
+                    )
+                }
+
+                // Time & Location Display (Collapsible)
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.TopEnd)
+                        .padding(top = 80.dp, end = 20.dp)
+                        .background(
+                            color = Color(0xFF2D1810).copy(alpha = 0.85f),
+                            shape = RoundedCornerShape(12.dp)
+                        )
+                        .clickable { isTimeDisplayExpanded = !isTimeDisplayExpanded }
+                        .padding(horizontal = 12.dp, vertical = 10.dp)
+                ) {
+                    if (isTimeDisplayExpanded) {
+                        // Full display
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = GameStateManager.getCurrentTimeString(),
+                                color = Color(0xFFE6D4C1),
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = GameStateManager.getCurrentLocationString(),
+                                color = Color(0xFFD4AF8C),
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(
+                                text = GameStateManager.getCompassString(),
+                                color = Color(0xFFB8956A),
+                                fontSize = 10.sp,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.padding(top = 4.dp)
+                            )
+                        }
+                    } else {
+                        // Minimal display
+                        Text(
+                            text = "${GameStateManager.gameState.currentDay}. Gün - ${GameStateManager.gameState.currentTimeOfDay.displayName.take(1)}",
+                            color = Color(0xFFE6D4C1),
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+
+                // Page Navigation Controls (Bottom Center)
+                Row(
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .padding(bottom = 32.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(24.dp)
+                ) {
+                    // Left Arrow - Previous Page or Exit
+                    Box(
+                        modifier = Modifier
+                            .size(48.dp)
+                            .background(
+                                color = Color(0xFF8B4513).copy(alpha = 0.3f),
+                                shape = CircleShape
+                            )
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null
+                            ) {
+                                // Determine which animation to trigger based on current page
+                                if (currentPage == 1) {
+                                    // First page - trigger closing animation
+                                    pageState = PageState.FINISHING
+                                } else {
+                                    val isOddPage = currentPage % 2 == 1
+                                    if (isOddPage) {
+                                        // Odd page (3,5,7...) -> Trigger reverse page turning animation to even page (2,4,6...)
+                                        pageState = PageState.REVERSE_PAGE_TURNING
+                                    } else {
+                                        // Even page (2,4,6...) -> Direct transition to previous odd page (1,3,5...)
+                                        currentPage -= 1
+                                        // No animation, just decrement page
+                                    }
+                                }
+                            },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = if (currentPage == 1) "Close Journal" else "Previous Page",
+                            tint = Color(0xFF8B4513),
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+
+                    // Page Number (Clickable for quick navigation)
+                    Box(
+                        modifier = Modifier
+                            .size(48.dp)
+                            .background(
+                                color = Color(0xFF8B4513).copy(alpha = 0.4f),
+                                shape = CircleShape
+                            )
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null
+                            ) {
+                                showPageSelector = true
+                            },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "$currentPage",
+                            color = Color(0xFF8B4513),
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+
+                    // Right Arrow - Next Page
+                    Box(
+                        modifier = Modifier
+                            .size(48.dp)
+                            .background(
+                                color = Color(0xFF8B4513).copy(alpha = 0.3f),
+                                shape = CircleShape
+                            )
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null
+                            ) {
+                                // Add new page if needed
+                                if (currentPage >= storyPages.size) {
+                                    val updatedPages = storyPages.toMutableList()
+                                    updatedPages.add("") // Add empty page
+                                    storyPages = updatedPages
+                                }
+
+                                // Check if we need animation based on page transition
+                                val isEvenPage = currentPage % 2 == 0
+                                if (isEvenPage) {
+                                    // Even page (2,4,6...) -> Trigger page turning animation to odd page (3,5,7...)
+                                    pageState = PageState.PAGE_TURNING
+                                } else {
+                                    // Odd page (1,3,5...) -> Direct transition to even page (2,4,6...)
+                                    currentPage += 1
+                                    // No animation, just increment page
+                                }
+                            },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                            contentDescription = "Next Page",
+                            tint = Color(0xFF8B4513),
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
+
+                // Content Overlay on the book page
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(
+                            start = 60.dp,  // Left margin for binding
+                            end = 40.dp,    // Right margin
+                            top = 80.dp,    // Top margin
+                            bottom = 100.dp // Bottom margin
+                        )
+                ) {
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        // Story Text Area
+                        val currentPageText = storyPages.getOrNull(currentPage - 1) ?: ""
+                        Text(
+                            text = currentPageText,
+                            color = Color(0xFF2D1810), // Dark brown ink color
+                            fontSize = 14.sp,
+                            lineHeight = 20.sp,
+                            textAlign = TextAlign.Left,
+                            modifier =
+                                Modifier
+                                    .fillMaxWidth()
+                                    .weight(1f)
+                        )
+
+                        // 3 Input System
+                        Column(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Text(
+                                text = "Bu turda ne yapmak istiyorsun?",
+                                color = Color(0xFF8B4513),
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+
+                            OutlinedTextField(
+                                value = userInput1,
+                                onValueChange = { userInput1 = it },
+                                placeholder = {
+                                    Text("İlk önce:", color = Color(0xFF8B7355))
+                                },
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedTextColor = Color(0xFF2D1810),
+                                    unfocusedTextColor = Color(0xFF2D1810)
+                                ),
+                                modifier = Modifier.fillMaxWidth(),
+                                maxLines = 2
+                            )
+
+                            OutlinedTextField(
+                                value = userInput2,
+                                onValueChange = { userInput2 = it },
+                                placeholder = {
+                                    Text("Sonra:", color = Color(0xFF8B7355))
+                                },
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedTextColor = Color(0xFF2D1810),
+                                    unfocusedTextColor = Color(0xFF2D1810)
+                                ),
+                                modifier = Modifier.fillMaxWidth(),
+                                maxLines = 2
+                            )
+
+                            OutlinedTextField(
+                                value = userInput3,
+                                onValueChange = { userInput3 = it },
+                                placeholder = {
+                                    Text("Son olarak:", color = Color(0xFF8B7355))
+                                },
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedTextColor = Color(0xFF2D1810),
+                                    unfocusedTextColor = Color(0xFF2D1810)
+                                ),
+                                modifier = Modifier.fillMaxWidth(),
+                                maxLines = 2
+                            )
+
+                            Button(
+                                onClick = {
+                                    if (userInput1.isNotBlank() || userInput2.isNotBlank() || userInput3.isNotBlank()) {
+                                        // Combine all inputs
+                                        val actions = listOfNotNull(
+                                            if (userInput1.isNotBlank()) "İlk: $userInput1" else null,
+                                            if (userInput2.isNotBlank()) "Sonra: $userInput2" else null,
+                                            if (userInput3.isNotBlank()) "Son: $userInput3" else null
+                                        )
+
+                                        val updatedPages = storyPages.toMutableList()
+                                        val currentPageText = updatedPages.getOrNull(currentPage - 1) ?: ""
+                                        updatedPages[currentPage - 1] = currentPageText + "\n\n${actions.joinToString("\n")}\n\n[Zaman ilerliyor...]"
+                                        storyPages = updatedPages
+
+                                        // Clear all inputs
+                                        userInput1 = ""
+                                        userInput2 = ""
+                                        userInput3 = ""
+
+                                        val dayChanged = GameStateManager.advanceTime()
+
+                                        // If day changed to odd number (3,5,7...), trigger page turn animation
+                                        if (dayChanged && GameStateManager.gameState.currentDay % 2 == 1 && GameStateManager.gameState.currentDay > 1) {
+                                            pageState = PageState.PAGE_TURNING
+                                        }
+                                    }
+                                },
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Color(0xFF8B4513)
+                                ),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text("Eylemi Gerçekleştir", color = Color.White, fontSize = 12.sp)
+                            }
+                        }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Page Selector Dialog
+        if (showPageSelector) {
+            AlertDialog(
+                onDismissRequest = { showPageSelector = false },
+                title = {
+                    Text(
+                        text = "Quick Page Navigation",
+                        color = Color(0xFF8B4513),
+                        style = MaterialTheme.typography.headlineSmall
+                    )
+                },
+                text = {
+                    LazyColumn(
+                        modifier = Modifier.height(200.dp)
+                    ) {
+                        // Create page options (every 5 pages)
+                        val pageOptions = mutableListOf<Int>()
+                        for (i in 1..maxOf(storyPages.size, 20) step 5) {
+                            pageOptions.add(i)
+                        }
+                        // Add individual pages near current page
+                        for (i in maxOf(1, currentPage - 2)..minOf(storyPages.size + 5, currentPage + 2)) {
+                            if (i !in pageOptions) {
+                                pageOptions.add(i)
+                            }
+                        }
+                        pageOptions.sort()
+
+                        items(pageOptions) { pageNum ->
+                            TextButton(
+                                onClick = {
+                                    // Add pages if needed
+                                    while (storyPages.size < pageNum) {
+                                        val updatedPages = storyPages.toMutableList()
+                                        updatedPages.add("")
+                                        storyPages = updatedPages
+                                    }
+                                    currentPage = pageNum
+                                    showPageSelector = false
+                                },
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(
+                                    text = "Page $pageNum",
+                                    color = if (pageNum == currentPage) Color(0xFF8B4513) else Color(0xFF8B7355),
+                                    fontWeight = if (pageNum == currentPage) FontWeight.Bold else FontWeight.Normal
+                                )
+                            }
+                        }
+                    }
+                },
+                confirmButton = {
+                    TextButton(
+                        onClick = { showPageSelector = false }
+                    ) {
+                        Text("Close", color = Color(0xFF8B4513))
+                    }
+                },
+                containerColor = Color(0xFFF5F5DC).copy(alpha = 0.95f)
+            )
+        }
+    }
+}

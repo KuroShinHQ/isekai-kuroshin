@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- G127: Android 12+ (API 31+) Splash Screen Theme -->
+<resources>
+
+    <style name="Theme.IsekaiKuroshin" parent="android:Theme.Black.NoTitleBar">
+        <!-- Splash Screen Background -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+
+        <!-- Android 12+ Splash Screen API (API 31+) -->
+        <!-- SİYAH arka plan → Kozmik resimle uyumlu! -->
+        <item name="android:windowSplashScreenBackground">@android:color/black</item>
+        <!-- Transparent 1x1 icon → Logo gösterme! (@null çalışmıyor, transparent drawable kullan) -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_icon_transparent</item>
+        <!-- 0ms → Hızlı geç! -->
+        <item name="android:windowSplashScreenAnimationDuration">0</item>
+        <!-- Icon background padding → Icon'u küçült (görünmez yap) -->
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+
+        <!-- Window decorations -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+
+</resources>

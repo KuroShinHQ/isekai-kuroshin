@@ -1,0 +1,261 @@
+{
+    "VERSION": "2.0",
+    "SYSTEM": "Axis-Based Attribute System",
+    "LAST_UPDATE": "2025-10-22",
+
+    "TR": {
+        "app_title": "Görsel Medya Etiketleyici v2.0 - Eksen Bazlı Sistem",
+        "play_button": "▶ Oynat",
+        "skip_button": "Atla",
+        "save_button": "Kaydet ve Sonraki",
+        "completed_message": "Tebrikler! Etiketlenecek yeni dosya kalmadı.",
+        "completed_title": "Görsel Medya Etiketleyici - Tamamlandı!",
+        "preview_error": "Önizleme yüklenemedi:\n{}",
+        "filename_preview_label": "Dosya Adı Önizlemesi...",
+        "open_location_button": "📁 Konumu Aç",
+        "open_location_tooltip": "Dosya konumunu dosya gezgininde aç",
+        "wizard_titles": {
+            "screen_type": "Ekran Türü",
+            "update_mode": "Güncelleme Modu",
+            "media_usage": "Medya Kullanım Yeri",
+            "primary_attribute": "Ana Nitelik (Eksen)",
+            "secondary_attribute": "İkincil Nitelik (Eksen)",
+            "emotion": "Baskın Duygu",
+            "narrative_atmosphere": "Anlatı Atmosferi",
+            "psychological_archetype": "Psikolojik Arketip",
+            "depth": "İçerik Derinliği"
+        },
+        "attributes": {
+            "VIOLENCE": "Şiddet → Saldırganlık + Güç",
+            "MERCY": "Merhamet → Acıma + Bağışlama",
+            "CHAOS": "Kaos → Düzensizlik + Özgürlük",
+            "ORDER": "Düzen → Sistem + Kontrol",
+            "SELFISH": "Bencillik → Kişisel Çıkar",
+            "SACRIFICE": "Fedakarlık → Başkaları İçin",
+            "COURAGE": "Cesaret → Korkusuzluk + Meydan Okuma",
+            "FEAR": "Korku → Endişe + Kaçış",
+            "LOYALTY": "Sadakat → Bağlılık + Güven",
+            "DECEIT": "Hile → Aldatma + Manipülasyon",
+            "SURVIVAL": "Hayatta Kalma → Temel İhtiyaç",
+            "DIVINE": "Kutsal → İlahi + Saf",
+            "DARK": "Karanlık → Kötülük + Gizli",
+            "MYSTERY": "Gizemli → Bilinmez + Esrarengiz",
+            "LIGHT": "Işık → İyilik + Aydınlık",
+            "CORRUPTION": "Bozulma → Yozlaşma + Çürüme",
+            "NONE": "Seçilmedi"
+        },
+        "emotions": {
+            "ANGER": "Öfke → Kızgınlık + Saldırganlık",
+            "SADNESS": "Üzüntü → Hüzün + Keder",
+            "JOY": "Neşe → Mutluluk + Sevinç",
+            "CALM": "Sakinlik → Huzur + Dinginlik",
+            "CONFUSION": "Kafa Karışıklığı → Şaşkınlık",
+            "NONE": "Seçilmedi"
+        },
+        "psychological_archetype": {
+            "HERO": "Kahraman → Cesaret + Mücadele",
+            "SHADOW": "Gölge Benlik → Karanlık Yan + Bastırılmış",
+            "SAGE": "Bilge → Bilgelik + Rehberlik",
+            "REBEL": "İsyankâr → Başkaldırı + Özgürlük",
+            "INNOCENT": "Masum → Saflık + Güven",
+            "EXPLORER": "Kaşif → Keşif + Merak",
+            "RULER": "Hükümdar → Otorite + Kontrol",
+            "CAREGIVER": "Bakıcı → Şefkat + Koruma",
+            "JESTER": "Soytarı → Eğlence + Özgürlük",
+            "LOVER": "Aşık → Tutku + Bağ",
+            "CREATOR": "Yaratıcı → İnovasyon + İfade",
+            "DESTROYER": "Yıkıcı → Dönüşüm + Son",
+            "NONE": "Seçilmedi"
+        },
+        "moral_tone": {
+            "REDEMPTION": "Kefaret / Pişmanlık",
+            "JUSTICE": "Adalet",
+            "VENGEANCE": "İntikam",
+            "FORGIVENESS": "Af / Bağışlama",
+            "JUDGMENT": "Yargı / Hesaplaşma",
+            "ACCEPTANCE": "Kabul / Kabullenme",
+            "DENIAL": "İnkar / Reddediş",
+            "TRANSFORMATION": "Dönüşüm",
+            "NONE": "Seçilmedi"
+        },
+        "narrative_atmosphere": {
+            "TRAGIC_REDEMPTION": "Trajik Kefaret → Acı + Pişmanlık",
+            "EPIC_JUSTICE": "Destansı Adalet → Kahramanlık + Hak",
+            "DARK_VENGEANCE": "Karanlık İntikam → Öfke + Hesaplaşma",
+            "MELANCHOLIC_FORGIVENESS": "Melankolik Af → Hüzün + Bağışlama",
+            "TRIUMPHANT_JUDGMENT": "Zafer Yargısı → Muzafferiyet + Hesap",
+            "HORROR_DENIAL": "Korku İnkarı → Dehşet + Reddediş",
+            "MYSTICAL_ACCEPTANCE": "Mistik Kabul → Gizem + Teslim",
+            "ROMANTIC_TRANSFORMATION": "Romantik Dönüşüm → Aşk + Değişim",
+            "COMEDIC": "Komedi → Mizah + Hafiflik",
+            "NOIR": "Noir → Karanlık Dedektif",
+            "PHILOSOPHICAL": "Felsefi → Düşünce + Sorgulama",
+            "NONE": "Seçilmedi"
+        },
+        "personality_trait": {
+            "OPENNESS": "Açıklık (Yaratıcı/Meraklı)",
+            "CONSCIENTIOUSNESS": "Sorumluluk (Disiplinli)",
+            "EXTRAVERSION": "Dışadönüklük (Sosyal)",
+            "AGREEABLENESS": "Uyumluluk (İşbirlikçi)",
+            "NEUROTICISM": "Nevrotiklik (Duygusal)",
+            "NONE": "Seçilmedi"
+        },
+        "depths": {
+            "D1_SURFACE": "D1: Yüzeysel → Aksiyon + Görsel Efekt",
+            "D2_EMOTIONAL": "D2: Duygusal → Karakter Duyguları",
+            "D3_SYMBOLIC": "D3: Sembolik → Metafor + Simge",
+            "D4_ARCHETYPAL": "D4: Arketipsel → Jung Arketipleri",
+            "D5_TRANSCENDENT": "D5: Aşkın → Felsefi + Varoluşsal"
+        },
+        "screen_types": {
+            "FIRSTUSER": "İlk Kullanıcı Karşılama (Ana Ekran) → İlk açılış + İlk giren ekranını manipüle edebilir",
+            "RETURNINGUSER": "Dönen Kullanıcı Karşılama (Ana Ekran) → Tekrar giriş ekranı",
+            "JOURNEY": "Günlük Yolculuk (Ana Ekran) → Hikaye akışı kitap formatı",
+            "JOURNEY_TRANSITION": "Günlük Açılış Animasyonu (Ara Sahne) → Her günlük girişinde karma bazlı intro",
+            "POSTDEATH": "Ölüm Sonrası Ekran (Ana Ekran) → İlk giren kullanıcı ekranını manipüle eder",
+            "DEATH_TRANSITION": "Ölüm Animasyonu (Ara Sahne) → Ekranlar arası ölüm geçişi",
+            "DEATH_STATISTICS": "Ölüm İstatistik Ekranı (Ana Ekran) → Ret sonrası istatistikler",
+            "UMBROS": "Umbros Karar Ekranı (Ana Ekran) → Seçim ve karar anları",
+            "LAUNCHER_ICON": "Uygulama Launcher İkonu (İkon) → Ana uygulama ikonu",
+            "NONE": "Seçilmedi"
+        },
+        "update_mode": {
+            "GM_UPDATED": "GM Tarafından Güncellenir → AI otomatik seçer",
+            "HARDCODED": "Sabit Kodlanmış → Manuel belirlendi",
+            "NONE": "Seçilmedi"
+        },
+        "media_usage": {
+            "TRANSITION_SCENE": "Geçiş Sahnesi → Ekranlar arası ara sahne",
+            "IN_SCREEN": "Ana Sahne → Ekran ön planı (foreground)",
+            "BACKGROUND": "Arka Plan → Sahne arka planı (background)",
+            "NONE": "Seçilmedi"
+        }
+    },
+    "EN": {
+        "app_title": "Visual Media Tagger v5.2 - Multi-Language",
+        "play_button": "▶ Play",
+        "skip_button": "Skip",
+        "save_button": "Save & Next",
+        "completed_message": "Congratulations! No new files left to tag.",
+        "completed_title": "Visual Media Tagger - Completed!",
+        "preview_error": "Could not load preview:\n{}",
+        "filename_preview_label": "Filename Preview...",
+        "open_location_button": "📁 Open Location",
+        "open_location_tooltip": "Open file location in explorer",
+        "wizard_titles": {
+            "screen_type": "Screen Type",
+            "update_mode": "Update Mode",
+            "media_usage": "Media Usage Location",
+            "primary_attribute": "Primary Attribute (Axis)",
+            "secondary_attribute": "Secondary Attribute (Axis)",
+            "emotion": "Dominant Emotion",
+            "narrative_atmosphere": "Narrative Atmosphere",
+            "psychological_archetype": "Psychological Archetype",
+            "depth": "Content Depth"
+        },
+        "attributes": {
+            "VIOLENCE": "Violence",
+            "MERCY": "Mercy",
+            "CHAOS": "Chaos",
+            "ORDER": "Order",
+            "SELFISH": "Selfish",
+            "SACRIFICE": "Sacrifice",
+            "COURAGE": "Courage",
+            "FEAR": "Fear",
+            "LOYALTY": "Loyalty",
+            "DECEIT": "Deceit",
+            "SURVIVAL": "Survival",
+            "DIVINE": "Divine / Holy",
+            "DARK": "Dark / Darkness",
+            "MYSTERY": "Mystery / Enigmatic",
+            "LIGHT": "Light / Luminous",
+            "CORRUPTION": "Corruption / Taint",
+            "NONE": "None"
+        },
+        "emotions": {
+            "ANGER": "Anger",
+            "SADNESS": "Sadness",
+            "JOY": "Joy",
+            "FEAR": "Fear",
+            "CALM": "Calm",
+            "CONFUSION": "Confusion",
+            "NONE": "None"
+        },
+        "psychological_archetype": {
+            "HERO": "Hero",
+            "SHADOW": "Shadow Self",
+            "SAGE": "Sage / Wise",
+            "REBEL": "Rebel / Revolutionary",
+            "INNOCENT": "Innocent / Pure",
+            "EXPLORER": "Explorer / Seeker",
+            "RULER": "Ruler / Leader",
+            "CAREGIVER": "Caregiver / Protector",
+            "JESTER": "Jester / Trickster",
+            "LOVER": "Lover / Romantic",
+            "CREATOR": "Creator / Artist",
+            "DESTROYER": "Destroyer / Nihilist",
+            "NONE": "None"
+        },
+        "moral_tone": {
+            "REDEMPTION": "Redemption / Atonement",
+            "JUSTICE": "Justice",
+            "VENGEANCE": "Vengeance / Revenge",
+            "FORGIVENESS": "Forgiveness / Mercy",
+            "JUDGMENT": "Judgment / Reckoning",
+            "ACCEPTANCE": "Acceptance",
+            "DENIAL": "Denial / Rejection",
+            "TRANSFORMATION": "Transformation / Change",
+            "NONE": "None"
+        },
+        "narrative_atmosphere": {
+            "TRAGIC_REDEMPTION": "Tragic Redemption",
+            "EPIC_JUSTICE": "Epic Justice",
+            "DARK_VENGEANCE": "Dark Vengeance",
+            "MELANCHOLIC_FORGIVENESS": "Melancholic Forgiveness",
+            "TRIUMPHANT_JUDGMENT": "Triumphant Judgment",
+            "HORROR_DENIAL": "Horror Denial",
+            "MYSTICAL_ACCEPTANCE": "Mystical Acceptance",
+            "ROMANTIC_TRANSFORMATION": "Romantic Transformation",
+            "COMEDIC": "Comedic",
+            "NOIR": "Noir",
+            "PHILOSOPHICAL": "Philosophical",
+            "NONE": "None"
+        },
+        "personality_trait": {
+            "OPENNESS": "Openness (Creative/Curious)",
+            "CONSCIENTIOUSNESS": "Conscientiousness (Disciplined)",
+            "EXTRAVERSION": "Extraversion (Social)",
+            "AGREEABLENESS": "Agreeableness (Cooperative)",
+            "NEUROTICISM": "Neuroticism (Emotional)",
+            "NONE": "None"
+        },
+        "depths": {
+            "D1": "Depth 1",
+            "D2": "Depth 2",
+            "D3": "Depth 3"
+        },
+        "screen_types": {
+            "FIRSTUSER": "First User (Main Screen) → Initial welcome + Can manipulate first screen",
+            "RETURNINGUSER": "Returning User (Main Screen) → Re-entry welcome",
+            "JOURNEY": "Daily Journey (Main Screen) → Story flow in book format",
+            "JOURNEY_TRANSITION": "Journal Opening Animation (Transition Scene) → Karma-based intro every journal open",
+            "POSTDEATH": "Post-Death (Main Screen) → Manipulates first user screen",
+            "DEATH_TRANSITION": "Death Animation (Transition Scene) → Between-screen death transition",
+            "DEATH_STATISTICS": "Death Statistics (Main Screen) → Stats after rejection",
+            "UMBROS": "Umbros Decision (Main Screen) → Choice and decision moments",
+            "LAUNCHER_ICON": "Launcher Icon (Icon) → Main app icon",
+            "NONE": "Not Selected"
+        },
+        "update_mode": {
+            "GM_UPDATED": "GM Updated → AI auto-selects",
+            "HARDCODED": "Hardcoded → Manually determined",
+            "NONE": "Not Selected"
+        },
+        "media_usage": {
+            "TRANSITION_SCENE": "Transition Scene → Between-screen interlude",
+            "IN_SCREEN": "Main Scene → Screen foreground (main stage)",
+            "BACKGROUND": "Background → Scene background layer",
+            "NONE": "Not Selected"
+        }
+    }
+}

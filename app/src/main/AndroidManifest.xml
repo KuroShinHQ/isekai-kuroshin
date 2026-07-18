@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- INTERNET permission for Google AI API -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- TODO-FIX-03: Haptic feedback için titreşim izni -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Kamera izni (Pose Detection için) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <!-- Mikrofon izni (Sesli komut için) -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- G57: Bildirim izni (Android 13+ için) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- G129: Alarm & Notification System -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- TODO-D3: GPS izni (Drone çevresel risk paneli için) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- ✅ ESP-001: Bluetooth izinleri (Kolluk Beyni BLE bağlantısı) -->
+    <!-- Android 12+ (API 31+) için yeni izinler -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- Android 11 ve altı için eski izinler -->
+    <uses-permission android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+
+    <!-- Health Connect permissions -->
+    <uses-permission android:name="android.permission.health.READ_WEIGHT" />
+    <uses-permission android:name="android.permission.health.WRITE_WEIGHT" />
+
+    <application
+        android:name=".IsekaiKuroshinApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IsekaiKuroshin"
+        android:enableOnBackInvokedCallback="true">
+
+        <!-- RACE CONDITION FIX - Startup Library: Data initialization BEFORE app starts -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="com.example.isekaikuroshin.initializer.DataInitializer"
+                android:value="androidx.startup" />
+        </provider>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.IsekaiKuroshin">
+            <!-- LAUNCHER intent-filter KALDIRILDI - activity-alias kullanılıyor -->
+
+            <!-- Health Connect integration -->
+            <intent-filter>
+                <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+            </intent-filter>
+        </activity>
+
+        <!--
+        ═══════════════════════════════════════════════════════════════════════
+        DİNAMİK LAUNCHER ICON SİSTEMİ - ACTIVITY-ALIAS TANIMLARI
+        ═══════════════════════════════════════════════════════════════════════
+
+        GÖREV: GM 3 günlük özet sonrası karma değerine göre icon değiştir
+
+        KARMA SİSTEMİ:
+        - Karma > 0.5  → DIVINE icon (ic_launcher_divine)
+        - Karma < -0.5 → DARK icon (ic_launcher_dark)
+        - -0.5 ≤ Karma ≤ 0.5 → MYSTERY icon (ic_launcher_mystery)
+
+        NOT:
+        - Sadece 1 alias enabled=true olmalı (çoklu launcher icon önleme)
+        - AppIconManager.kt ile programatik olarak değiştirilir
+        - İlk kurulumda MYSTERY aktif (nötr başlangıç)
+        ═══════════════════════════════════════════════════════════════════════
+        -->
+
+        <!-- DIVINE Icon - Yüksek Pozitif Karma (> 0.5) -->
+        <activity-alias
+            android:name=".DIVINE"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher_divine"
+            android:roundIcon="@mipmap/ic_launcher_divine"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- DARK Icon - Yüksek Negatif Karma (< -0.5) -->
+        <activity-alias
+            android:name=".DARK"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher_dark"
+            android:roundIcon="@mipmap/ic_launcher_dark"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- MYSTERY Icon - Nötr Karma (-0.5 ~ 0.5) [VARSAYILAN] -->
+        <activity-alias
+            android:name=".MYSTERY"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher_mystery"
+            android:roundIcon="@mipmap/ic_launcher_mystery"
+            android:enabled="true"
+            android:exported="true"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- G129: Alarm Broadcast Receiver -->
+        <receiver
+            android:name=".utils.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+    <!-- Health Connect queries -->
+    <queries>
+        <package android:name="com.google.android.apps.healthdata" />
+    </queries>
+
+</manifest>

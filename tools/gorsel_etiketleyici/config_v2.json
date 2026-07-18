@@ -1,0 +1,265 @@
+{
+    "VERSION": "2.0",
+    "DESCRIPTION": "Görsel Etiketleyici Config v2.0 - Eksen Bazlı Attribute Sistemi",
+    "LAST_UPDATE": "2025-10-21",
+
+    "CORE_ATTRIBUTE_AXES": {
+        "AXIS_1": {
+            "name": "VIOLENCE_MERCY",
+            "axis_id": 1,
+            "negative": {"id": 15, "label": "VIOLENCE", "tr": "Şiddet"},
+            "positive": {"id": 4, "label": "MERCY", "tr": "Merhamet"}
+        },
+        "AXIS_2": {
+            "name": "CHAOS_ORDER",
+            "axis_id": 2,
+            "negative": {"id": 12, "label": "CHAOS", "tr": "Kaos"},
+            "positive": {"id": 7, "label": "ORDER", "tr": "Düzen"}
+        },
+        "AXIS_3": {
+            "name": "SELFISH_SACRIFICE",
+            "axis_id": 3,
+            "negative": {"id": 11, "label": "SELFISH", "tr": "Bencillik"},
+            "positive": {"id": 6, "label": "SACRIFICE", "tr": "Fedakarlık"}
+        },
+        "AXIS_4": {
+            "name": "FEAR_COURAGE",
+            "axis_id": 4,
+            "negative": {"id": 10, "label": "FEAR", "tr": "Korku"},
+            "positive": {"id": 5, "label": "COURAGE", "tr": "Cesaret"}
+        },
+        "AXIS_5": {
+            "name": "DECEIT_LOYALTY",
+            "axis_id": 5,
+            "negative": {"id": 13, "label": "DECEIT", "tr": "Hile"},
+            "positive": {"id": 3, "label": "LOYALTY", "tr": "Sadakat"}
+        },
+        "AXIS_6": {
+            "name": "DARKNESS_LIGHT",
+            "axis_id": 6,
+            "negative": {"id": 14, "label": "DARK", "tr": "Karanlık"},
+            "positive": {"id": 2, "label": "LIGHT", "tr": "Işık"}
+        }
+    },
+
+    "SPECIAL_ATTRIBUTES": {
+        "1": {"label": "SURVIVAL", "tr": "Hayatta Kalma"},
+        "2": {"label": "DIVINE", "tr": "Kutsal / İlahi"},
+        "3": {"label": "CORRUPTION", "tr": "Bozulma / Yozlaşma"},
+        "4": {"label": "MYSTERY", "tr": "Gizemli / Esrarengiz"},
+        "0": {"label": "NONE", "tr": "Seçilmedi"}
+    },
+
+    "ATTRIBUTES_FLAT": {
+        "0": "NONE",
+        "1": "DIVINE", "2": "LIGHT", "3": "LOYALTY", "4": "MERCY",
+        "5": "COURAGE", "6": "SACRIFICE", "7": "ORDER",
+        "8": "MYSTERY", "9": "SURVIVAL",
+        "10": "FEAR", "11": "SELFISH", "12": "CHAOS",
+        "13": "DECEIT", "14": "DARK", "15": "VIOLENCE", "16": "CORRUPTION"
+    },
+
+    "EMOTIONS": {
+        "0": "NONE",
+        "1": "JOY", "2": "CALM", "3": "CONFUSION",
+        "4": "SADNESS", "5": "ANGER"
+    },
+
+    "NARRATIVE_ATMOSPHERE": {
+        "0": "NONE",
+        "1": "TRIUMPHANT_JUDGMENT", "2": "EPIC_JUSTICE", "3": "ROMANTIC_TRANSFORMATION",
+        "4": "MYSTICAL_ACCEPTANCE", "5": "TRAGIC_REDEMPTION", "6": "MELANCHOLIC_FORGIVENESS",
+        "7": "PHILOSOPHICAL", "8": "COMEDIC", "9": "NOIR",
+        "10": "HORROR_DENIAL", "11": "DARK_VENGEANCE"
+    },
+
+    "PSYCHOLOGICAL_ARCHETYPE": {
+        "0": "NONE",
+        "1": "HERO", "2": "SAGE", "3": "CAREGIVER", "4": "LOVER",
+        "5": "CREATOR", "6": "RULER", "7": "EXPLORER", "8": "INNOCENT",
+        "9": "JESTER", "10": "REBEL", "11": "SHADOW", "12": "DESTROYER"
+    },
+
+    "DEPTHS": {
+        "1": "D1_SURFACE", "2": "D2_EMOTIONAL", "3": "D3_SYMBOLIC",
+        "4": "D4_ARCHETYPAL", "5": "D5_TRANSCENDENT"
+    },
+
+    "SCREEN_TYPES": {
+        "1": "FIRSTUSER", "2": "RETURNINGUSER",
+        "3": "JOURNEY", "4": "JOURNEY_TRANSITION",
+        "5": "POSTDEATH", "6": "DEATH_TRANSITION", "7": "DEATH_STATISTICS",
+        "8": "UMBROS",
+        "9": "LAUNCHER_ICON"
+    },
+
+    "UPDATE_MODE": {
+        "1": "GM_UPDATED", "2": "HARDCODED"
+    },
+
+    "MEDIA_USAGE": {
+        "1": "TRANSITION_SCENE", "2": "IN_SCREEN", "3": "BACKGROUND"
+    },
+
+    "SCREEN_TYPE_WIZARD_MAPPING": {
+        "FIRSTUSER": {
+            "steps": ["primary_attribute", "secondary_attribute", "emotion", "narrative_atmosphere", "psychological_archetype", "depth"],
+            "defaults": {
+                "update_mode": "GM_UPDATED",
+                "media_usage": "IN_SCREEN"
+            }
+        },
+        "RETURNINGUSER": {
+            "steps": ["primary_attribute", "secondary_attribute", "emotion", "narrative_atmosphere", "psychological_archetype", "depth"],
+            "defaults": {
+                "update_mode": "GM_UPDATED",
+                "media_usage": "IN_SCREEN"
+            }
+        },
+        "POSTDEATH": {
+            "steps": ["primary_attribute", "secondary_attribute", "emotion", "narrative_atmosphere", "psychological_archetype", "depth"],
+            "defaults": {
+                "update_mode": "GM_UPDATED",
+                "media_usage": "IN_SCREEN"
+            }
+        },
+        "UMBROS": {
+            "steps": ["primary_attribute", "secondary_attribute", "emotion", "narrative_atmosphere", "psychological_archetype", "depth"],
+            "defaults": {
+                "update_mode": "GM_UPDATED",
+                "media_usage": "IN_SCREEN"
+            },
+            "depth_priority": [4, 5]
+        },
+        "JOURNEY": {
+            "steps": [],
+            "defaults": {
+                "update_mode": "HARDCODED",
+                "media_usage": "BACKGROUND",
+                "primary_attribute": "NONE",
+                "secondary_attribute": "NONE",
+                "emotion": "NONE",
+                "narrative_atmosphere": "NONE",
+                "psychological_archetype": "NONE",
+                "depth": "D1_SURFACE"
+            }
+        },
+        "JOURNEY_TRANSITION": {
+            "steps": ["primary_attribute"],
+            "defaults": {
+                "update_mode": "GM_UPDATED",
+                "media_usage": "TRANSITION_SCENE",
+                "secondary_attribute": "NONE",
+                "emotion": "NONE",
+                "narrative_atmosphere": "NONE",
+                "psychological_archetype": "NONE",
+                "depth": "D1_SURFACE"
+            }
+        },
+        "DEATH_TRANSITION": {
+            "steps": ["primary_attribute", "emotion", "narrative_atmosphere", "psychological_archetype", "depth"],
+            "defaults": {
+                "update_mode": "HARDCODED",
+                "media_usage": "TRANSITION_SCENE",
+                "secondary_attribute": "NONE"
+            },
+            "depth_priority": [4, 5]
+        },
+        "DEATH_STATISTICS": {
+            "steps": [],
+            "defaults": {
+                "update_mode": "HARDCODED",
+                "media_usage": "IN_SCREEN",
+                "primary_attribute": "NONE",
+                "secondary_attribute": "NONE",
+                "emotion": "NONE",
+                "narrative_atmosphere": "NONE",
+                "psychological_archetype": "NONE",
+                "depth": "D1_SURFACE"
+            }
+        },
+        "LAUNCHER_ICON": {
+            "steps": ["primary_attribute"],
+            "defaults": {
+                "update_mode": "HARDCODED",
+                "media_usage": "N/A",
+                "secondary_attribute": "NONE",
+                "emotion": "NONE",
+                "narrative_atmosphere": "NONE",
+                "psychological_archetype": "NONE",
+                "depth": "D1_SURFACE"
+            },
+            "allowed_attributes": ["DIVINE", "DARK", "MYSTERY"],
+            "filename_prefix": "IC_LAUNCHER"
+        }
+    },
+
+    "SUPPORTED_VIDEO_EXTENSIONS": [".mp4", ".mov", ".avi", ".mkv"],
+    "SUPPORTED_IMAGE_EXTENSIONS": [".jpg", ".jpeg", ".png"],
+
+    "MINIMUM_MEDIA_REQUIREMENTS": {
+        "FIRSTUSER": {
+            "min_videos": 5,
+            "min_photos": 3,
+            "recommended_videos": 10,
+            "recommended_photos": 8,
+            "description": "🆕 İlk Kullanıcı Karşılama Ekranı - Uygulamaya ilk giriş"
+        },
+        "RETURNINGUSER": {
+            "min_videos": 8,
+            "min_photos": 5,
+            "recommended_videos": 15,
+            "recommended_photos": 10,
+            "description": "🔄 Dönen Kullanıcı Karşılama - Her gün farklı içerik"
+        },
+        "POSTDEATH": {
+            "min_videos": 3,
+            "min_photos": 2,
+            "recommended_videos": 8,
+            "recommended_photos": 5,
+            "description": "💀 Ölüm Sonrası Ekran - Yeniden doğuş bekleme"
+        },
+        "UMBROS": {
+            "min_videos": 2,
+            "min_photos": 2,
+            "recommended_videos": 5,
+            "recommended_photos": 5,
+            "description": "⚖️ Umbros Karar Ekranı - Melek/Şeytan seçimi"
+        },
+        "JOURNEY": {
+            "min_videos": 1,
+            "min_photos": 1,
+            "recommended_videos": 3,
+            "recommended_photos": 3,
+            "description": "📖 Günlük Yolculuk Kitabı - Background animasyonu"
+        },
+        "JOURNEY_TRANSITION": {
+            "min_videos": 12,
+            "min_photos": 0,
+            "recommended_videos": 36,
+            "recommended_photos": 0,
+            "description": "🎬 Günlük Açılış Animasyonu - Karma bazlı dinamik (her seferinde, GM seçer)"
+        },
+        "DEATH_TRANSITION": {
+            "min_videos": 2,
+            "min_photos": 0,
+            "recommended_videos": 5,
+            "recommended_photos": 2,
+            "description": "🎬 Ölüm Animasyonu - Ekranlar arası geçiş efekti"
+        },
+        "DEATH_STATISTICS": {
+            "min_videos": 0,
+            "min_photos": 1,
+            "recommended_videos": 0,
+            "recommended_photos": 3,
+            "description": "📊 Ölüm İstatistikleri - Arka plan görseli"
+        },
+        "LAUNCHER_ICON": {
+            "min_videos": 0,
+            "min_photos": 3,
+            "recommended_videos": 0,
+            "recommended_photos": 6,
+            "description": "🎯 Launcher İkonu - Kutsal/Karanlık/Gizemli temalar"
+        }
+    }
+}

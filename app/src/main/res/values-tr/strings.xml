@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">IsekaiKuroshin</string>
+
+    <!-- HATA #4 FIX: Character Screen Turkish strings -->
+    <string name="life_stats">Yaşam İstatistikleri</string>
+    <string name="main_stats">Ana İstatistikler</string>
+    <string name="elemental_affinities">Element Yakınlıkları</string>
+
+    <!-- Stats -->
+    <string name="hp">CAN</string>
+    <string name="mp">MANA</string>
+    <string name="stamina">DAYANIKLILIK</string>
+    <string name="hunger">AÇLIK</string>
+    <string name="fatigue">YORGUNLUK</string>
+    <string name="strength">GÜÇ</string>
+    <string name="agility">ÇEVİKLİK</string>
+    <string name="intelligence">ZEKA</string>
+    <string name="vitality">CAN GÜCÜ</string>
+    <string name="spirit">RUH GÜCÜ</string>
+    <string name="luck">ŞANS</string>
+
+    <!-- Elements -->
+    <string name="fire">Ateş</string>
+    <string name="water">Su</string>
+    <string name="earth">Toprak</string>
+    <string name="wind">Rüzgar</string>
+    <string name="lightning">Yıldırım</string>
+    <string name="ice">Buz</string>
+    <string name="light">Işık</string>
+    <string name="dark">Karanlık</string>
+
+    <!-- Common UI -->
+    <string name="level">Seviye</string>
+    <string name="confirm">Onayla</string>
+    <string name="cancel">İptal</string>
+    <string name="unspent_points">Dağıtılmamış Puanlar</string>
+    <string name="pending_points">Bekleyen Puanlar</string>
+
+    <!-- Character Screen Titles -->
+    <string name="titles_and_badges">Unvanlar ve Rozetler</string>
+    <string name="skills">Yetenekler</string>
+    <string name="stat_allocation_hint">Puan dağıtmak için + \'ya dokunun</string>
+
+    <!-- Card Types -->
+    <string name="badge">Rozet</string>
+    <string name="skill">Yetenek</string>
+    <string name="adaptation_skill">Adaptasyon Yeteneği</string>
+
+    <!-- Exercise Names -->
+    <string name="choose_exercise">Egzersiz Seç</string>
+    <string name="exercise_pushup">Şınav</string>
+    <string name="exercise_situp">Mekik</string>
+    <string name="exercise_jumprope">İp</string>
+
+    <!-- Settings -->
+    <string name="settings">Ayarlar</string>
+    <string name="service_settings">Servis Ayarları</string>
+    <string name="game_settings">Oyun Ayarları</string>
+    <string name="ui_settings">Arayüz Ayarları</string>
+    <string name="story_ai_settings">Hikaye ve AI Ayarları</string>
+
+    <!-- G29 FIX: Ancient Techniques & Element Affinity -->
+    <string name="ancient_techniques">Kadim Teknikler</string>
+    <string name="element_affinity">Element Yakınlığı</string>
+    <string name="mana_core">Mana Çekirdeği</string>
+    <string name="qi_cultivation">Qi Kültivasyon</string>
+
+    <!-- FIX #39: Quest Screen -->
+    <string name="main_quests">Ana Görevler</string>
+    <string name="side_quests">Yan Görevler</string>
+    <string name="no_main_quest_yet">Henüz ana görev yok</string>
+    <string name="main_quest_badge">ANA GÖREV</string>
+    <string name="quest_progress_completed">% tamamlandı</string>
+    <string name="quest_giver">Veren:</string>
+    <string name="quest_due_day">Son Gün:</string>
+</resources>

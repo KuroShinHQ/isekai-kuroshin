@@ -1,0 +1,77 @@
+# ==========================================
+# IsekaiKuroshin .gitignore
+# ==========================================
+
+# --- Build artifacts ---
+build/
+app/build/
+.gradle/
+.gradle.bak/
+.cxx/
+.externalNativeBuild/
+/captures
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# --- Android signing ---
+*.keystore
+*.jks
+keystore.properties
+
+# --- IDE ---
+.idea/
+.claude/
+.gemini/
+.kotlin/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# --- Python (tools/) ---
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# --- Android SDK / Firebase ---
+local.properties
+google-services.json
+app/google-services.json
+*.keystore
+
+# --- Large media assets (download separately — see README) ---
+app/src/main/assets/stitch_ai_designs/
+app/src/main/assets/gemma3-1b-it-int4.litertlm
+app/src/main/assets/*.litertlm
+app/src/main/assets/*.gguf
+app/src/main/assets/*.bin
+app/src/main/res/raw/*.mp4
+app/src/main/res/raw/*.mp3
+
+# --- Personal / copyrighted data (never commit) ---
+MEDYA_ARSIV_VE_KAYNAKLAR/
+27.10.2025backup/
+*.backup/
+ffmpeg/
+
+# --- Personal runtime data ---
+.autosave_progress_v2.json
+.media_frame_size.json
+KarmaDatabase.json
+PlayerKarmaProfile.json
+nul
+
+# --- Logs ---
+*.log
+docs/logs/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db

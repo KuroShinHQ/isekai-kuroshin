@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- G127: Main App Theme with Splash Screen (Android 11 and below) -->
+    <style name="Theme.IsekaiKuroshin" parent="android:Theme.Black.NoTitleBar">
+        <!-- Splash Screen Background -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+
+        <!-- Window decorations -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Navigation bar color -->
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+
+</resources>
