@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <img alt="Status" src="https://img.shields.io/badge/status-Public-brightgreen">
   <img alt="Language" src="https://img.shields.io/badge/Kotlin-111.7K%20LOC-7F52FF">
   <img alt="Platform" src="https://img.shields.io/badge/Platform-Android%2026%2B-3DDC84">
   <img alt="AI" src="https://img.shields.io/badge/AI-MediaPipe%20LlmInference-FF6F00">
