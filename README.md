@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">IsekaiKuroshin</h1>
+  <h1 align="center">isekai-kuroshin</h1>
   <p align="center">On-Device AI Personal Growth & Gamification Platform</p>
   <p align="center">A fully local, MediaPipe-powered AI assistant that fuses health tracking, language learning, and drone control into an RPG narrative.</p>
 </p>
@@ -18,7 +18,7 @@
 
 ## Overview
 
-**IsekaiKuroshin** is an Android application that turns daily life into an isekai-style RPG —
+**isekai-kuroshin** is an Android application that turns daily life into an isekai-style RPG —
 powered entirely by **on-device AI** (no cloud, no API keys required for the core experience).
 
 An AI Game Master narrates a personalized story via **BM25-based RAG retrieval** from embedded
@@ -92,7 +92,7 @@ studio, skill tree, seal practice, cultivation, crafting, settings, dashboard, a
 ## Project Structure
 
 ```
-IsekaiKuroshin/
+isekai-kuroshin/
 ├── app/
 │   ├── src/main/java/com/example/isekaikuroshin/
 │   │   ├── ai/              # GlobalAIManager, MemoryManager, AiNarrator
@@ -142,8 +142,8 @@ IsekaiKuroshin/
 ### Setup
 
 ```bash
-git clone https://github.com/KuroShinHQ/IsekaiKuroshin.git
-cd IsekaiKuroshin
+git clone https://github.com/KuroShinHQ/isekai-kuroshin.git
+cd isekai-kuroshin
 ```
 
 1. Open the project in **Android Studio**
