@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 :: ============================================
 :: isekai-kuroshin.bat
 :: Versiyon: v1.0
