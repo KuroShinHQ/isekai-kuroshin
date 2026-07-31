@@ -63,7 +63,7 @@ echo --- 2/4: analysis_engine.py ---
 if %errorlevel% equ 0 ( echo     Durum: BASARILI ) else ( echo     Durum: BASARISIZ )
 echo.
 echo --- 3/4: app.py (Streamlit dashboard) ---
-%PYTHON% -c "import tools.kuroshin_insight_dashboard.app; print('Import OK')" 2>&1
+%PYTHON% -c "import sys; sys.path.insert(0, r'%IK_ROOT%tools\kuroshin_insight_dashboard'); import tools.kuroshin_insight_dashboard.app; print('Import OK')" 2>&1
 if %errorlevel% equ 0 ( echo     Durum: BASARILI ) else ( echo     Durum: BASARISIZ )
 echo.
 echo --- 4/4: visualization.py ---
