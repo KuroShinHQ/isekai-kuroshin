@@ -1,0 +1,5172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.4.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.4.1)" variant="all" version="8.4.1">
+
+    <issue
+        id="ResourceType"
+        message="Expected resource of type styleable"
+        errorLine1="                val splashIconId = splashAttrs.getResourceId(1, 0)"
+        errorLine2="                                                             ~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/MainActivity.kt"
+            line="113"
+            column="62"/>
+    </issue>
+
+    <issue
+        id="ResourceType"
+        message="Expected resource of type styleable"
+        errorLine1="                val splashDuration = splashAttrs.getInt(2, -1)"
+        errorLine2="                                                        ~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/MainActivity.kt"
+            line="114"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="                                sharedPrefs.edit().putBoolean(&quot;is_first_launch&quot;, true).commit()"
+        errorLine2="                                                                                       ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/screens/DeathStatisticsScreen.kt"
+            line="268"
+            column="88"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="                                sharedPrefs.edit().putBoolean(&quot;is_first_launch&quot;, true).commit()"
+        errorLine2="                                                                                       ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/screens/DeathStatisticsScreen.kt"
+            line="306"
+            column="88"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="                            sharedPrefs.edit().putBoolean(&quot;is_first_launch&quot;, true).commit()"
+        errorLine2="                                                                                   ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/screens/DeathStatisticsScreen.kt"
+            line="358"
+            column="84"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="            sharedPrefs.edit().putString(KEY_GAME_DATA, jsonString).commit() // SYNC!"
+        errorLine2="                                                                    ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/data/PersistentDataManager.kt"
+            line="1177"
+            column="69"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="            text = String.format(&quot;%.1f&quot;, currentValue),"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/AnimationUtils.kt"
+            line="62"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="            GameLogger.logSystem(&quot;  ${rank + 1}. Chunk ${scoredChunk.chunkIndex} (Score: ${String.format(&quot;%.3f&quot;, scoredChunk.score)})&quot;)"
+        errorLine2="                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/BM25Scorer.kt"
+            line="202"
+            column="92"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = &quot;Heap: ${String.format(&quot;%.1f&quot;, memoryStats.heapUsedMB)}MB / ${String.format(&quot;%.1f&quot;, memoryStats.heapMaxMB)}MB&quot;,"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/settings/DeveloperOptionsSection.kt"
+            line="992"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = &quot;Heap: ${String.format(&quot;%.1f&quot;, memoryStats.heapUsedMB)}MB / ${String.format(&quot;%.1f&quot;, memoryStats.heapMaxMB)}MB&quot;,"
+        errorLine2="                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/settings/DeveloperOptionsSection.kt"
+            line="992"
+            column="90"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = &quot;Native: ${String.format(&quot;%.1f&quot;, memoryStats.nativeAllocatedMB)}MB&quot;,"
+        errorLine2="                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/settings/DeveloperOptionsSection.kt"
+            line="1000"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = &quot;PSS: ${String.format(&quot;%.1f&quot;, memoryStats.pssTotalMB)}MB (${memoryStats.memoryPressureLevel})&quot;,"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/settings/DeveloperOptionsSection.kt"
+            line="1015"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = &quot;Available: ${String.format(&quot;%.1f&quot;, memoryStats.availableSystemMemoryMB)}MB&quot;,"
+        errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/settings/DeveloperOptionsSection.kt"
+            line="1024"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                            text = if (windSpeed != null) &quot;${String.format(&quot;%.1f&quot;, windSpeed)} km/h&quot; else &quot;--&quot;,"
+        errorLine2="                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/drone/DroneControllerScreen.kt"
+            line="731"
+            column="62"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="            text = &quot;+${String.format(&quot;%.1f&quot;, animatedValue)}&quot;,"
+        errorLine2="                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/exercise/ExerciseResultScreen.kt"
+            line="434"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                GameLogger.logSystem(&quot;${index + 1}. Chunk ${scoredChunk.chunkIndex} (Score: ${String.format(&quot;%.3f&quot;, scoredChunk.score)})&quot;)"
+        errorLine2="                                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/GameMasterEngine.kt"
+            line="123"
+            column="95"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                GameLogger.logSystem(&quot;🎲 Depth seçim detayı: ${depth.label} (weight: ${String.format(&quot;%.3f&quot;, weight)})&quot;)"
+        errorLine2="                                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/GameMasterEngine.kt"
+            line="2135"
+            column="88"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="        return String.format(&quot;%.1f/%.1f kg&quot;, currentWeight, maxCapacity)"
+        errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/data/GameState.kt"
+            line="492"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="    val weightKg = String.format(&quot;%.1f&quot;, record.weight.inKilograms)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/HealthHubScreen.kt"
+            line="880"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                        text = String.format(&quot;%02d:%02d&quot;, selectedHour, selectedMinute),"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/HealthHubScreen.kt"
+            line="1709"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = String.format(&quot;%02d:%02d&quot;, selectedHour, selectedMinute),"
+        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/HealthHubScreen.kt"
+            line="1821"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="            appendLine(&quot;- Taşıma Kapasitesi: ${String.format(&quot;%.1f&quot;, currentWeight)} / ${String.format(&quot;%.1f&quot;, maxCapacity)}&quot;)"
+        errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/ObserverEngine.kt"
+            line="94"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="            appendLine(&quot;- Taşıma Kapasitesi: ${String.format(&quot;%.1f&quot;, currentWeight)} / ${String.format(&quot;%.1f&quot;, maxCapacity)}&quot;)"
+        errorLine2="                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/ObserverEngine.kt"
+            line="94"
+            column="90"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = &quot;${String.format(&quot;%.1f&quot;, stats.cpuTemperature)}°C (${stats.thermalState})&quot;,"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/settings/PerformanceSettingsScreen.kt"
+            line="248"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                        text = &quot;${rememberLocalizedText(&quot;performance_thermal_threshold&quot;)}: ${String.format(&quot;%.0f&quot;, maxThermalThreshold)}°C&quot;"
+        errorLine2="                                                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/settings/PerformanceSettingsScreen.kt"
+            line="495"
+            column="94"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="        GameLogger.logSystem(&quot;TODO-HUB-11: Kilo değişimi: ${String.format(&quot;%.2f&quot;, weightChange)} kg (İlk: $firstWeight, Son: $lastWeight)&quot;)"
+        errorLine2="                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/ProactiveHealthCoach.kt"
+            line="276"
+            column="61"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    &quot;muhteşem bir performans sergileydiniz! Ancak kilonuzda ${String.format(&quot;%.1f&quot;, weightChange)} kg &quot; +"
+        errorLine2="                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/ProactiveHealthCoach.kt"
+            line="285"
+            column="79"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="            GameLogger.logSystem(&quot;TODO-HUB-11: ✅ Aktivite/Kilo dengesi normal (Değişim: ${String.format(&quot;%.2f&quot;, weightChange)} kg)&quot;)"
+        errorLine2="                                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/ProactiveHealthCoach.kt"
+            line="294"
+            column="91"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                    text = &quot;Offset: (${String.format(&quot;%.2f&quot;, offsetConfig.offset3D.x)}, &quot; +"
+        errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/VFXWorkshopScreen.kt"
+            line="1000"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                            &quot;${String.format(&quot;%.2f&quot;, offsetConfig.offset3D.y)}, &quot; +"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/VFXWorkshopScreen.kt"
+            line="1001"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        errorLine1="                            &quot;${String.format(&quot;%.2f&quot;, offsetConfig.offset3D.z)})&quot;,"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/VFXWorkshopScreen.kt"
+            line="1002"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="OldTargetApi"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
+        errorLine1="        targetSdk = 34"
+        errorLine2="        ~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="18"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        message="Attribute `usesPermissionFlags` is only used in API level 31 and higher (current min is 26)"
+        errorLine1="        android:usesPermissionFlags=&quot;neverForLocation&quot; />"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="36"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        message="Attribute `enableOnBackInvokedCallback` is only used in API level 33 and higher (current min is 26)"
+        errorLine1="        android:enableOnBackInvokedCallback=&quot;true&quot;>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="60"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="WrongConstant"
+        message="Must be one of: AudioManager.STREAM_VOICE_CALL, AudioManager.STREAM_SYSTEM, AudioManager.STREAM_RING, AudioManager.STREAM_MUSIC, AudioManager.STREAM_ALARM, AudioManager.STREAM_NOTIFICATION, AudioManager.STREAM_DTMF, AudioManager.STREAM_ACCESSIBILITY"
+        errorLine1="                notificationBuilder.setSound(soundUri, AudioAttributes.CONTENT_TYPE_SONIFICATION)"
+        errorLine2="                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/SystemNotificationHelper.kt"
+            line="137"
+            column="56"/>
+    </issue>
+
+    <issue
+        id="RedundantLabel"
+        message="Redundant label can be removed"
+        errorLine1="            android:label=&quot;@string/app_name&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="76"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.4.1 is available: 9.3.1. (There is also a newer version of 8.4.𝑥 available, if upgrading to 9.3.1 is difficult: 8.4.2)"
+        errorLine1="agp = &quot;8.4.1&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.4.1 is available: 9.3.1. (There is also a newer version of 8.4.𝑥 available, if upgrading to 9.3.1 is difficult: 8.4.2)"
+        errorLine1="agp = &quot;8.4.1&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.4.1 is available: 9.3.1. (There is also a newer version of 8.4.𝑥 available, if upgrading to 9.3.1 is difficult: 8.4.2)"
+        errorLine1="agp = &quot;8.4.1&quot;"
+        errorLine2="      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="2"
+            column="7"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.startup:startup-runtime than 1.1.1 is available: 1.2.0"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="113"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.ai.client.generativeai:generativeai than 0.1.2 is available: 0.9.0"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="135"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mlkit:pose-detection than 18.0.0-beta4 is available: 18.0.0-beta5"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="144"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mediapipe:tasks-vision than 0.10.29 is available: 1.0.0"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="148"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.camera:camera-camera2 than 1.3.0 is available: 1.6.1"
+        errorLine1="    implementation(&quot;androidx.camera:camera-lifecycle:1.3.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="151"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.camera:camera-lifecycle than 1.3.0 is available: 1.6.1"
+        errorLine1="    implementation(&quot;androidx.camera:camera-view:1.3.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="152"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.camera:camera-view than 1.3.0 is available: 1.6.1"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="153"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-location than 21.0.1 is available: 21.4.0"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="172"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-bom than 33.7.0 is available: 34.17.0"
+        errorLine1="    implementation(&quot;com.google.firebase:firebase-firestore-ktx&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="178"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.android.billingclient:billing-ktx than 7.1.1 is available: 9.1.0"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="183"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.19.0"
+        errorLine1="coreKtx = &quot;1.13.1&quot;"
+        errorLine2="          ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="6"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.19.0"
+        errorLine1="coreKtx = &quot;1.13.1&quot;"
+        errorLine2="          ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="6"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.19.0"
+        errorLine1="coreKtx = &quot;1.13.1&quot;"
+        errorLine2="          ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="6"
+            column="11"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.4 is available: 2.11.0"
+        errorLine1="lifecycleRuntimeKtx = &quot;2.8.4&quot;"
+        errorLine2="                      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="10"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.4 is available: 2.11.0"
+        errorLine1="lifecycleRuntimeKtx = &quot;2.8.4&quot;"
+        errorLine2="                      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="10"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.4 is available: 2.11.0"
+        errorLine1="lifecycleRuntimeKtx = &quot;2.8.4&quot;"
+        errorLine2="                      ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="10"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.activity:activity-compose than 1.9.1 is available: 1.13.0"
+        errorLine1="activityCompose = &quot;1.9.1&quot;"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="11"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.activity:activity-compose than 1.9.1 is available: 1.13.0"
+        errorLine1="activityCompose = &quot;1.9.1&quot;"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="11"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.activity:activity-compose than 1.9.1 is available: 1.13.0"
+        errorLine1="activityCompose = &quot;1.9.1&quot;"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="11"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose:compose-bom than 2024.06.00 is available: 2026.06.01"
+        errorLine1="composeBom = &quot;2024.06.00&quot;"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="12"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose:compose-bom than 2024.06.00 is available: 2026.06.01"
+        errorLine1="composeBom = &quot;2024.06.00&quot;"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="12"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose:compose-bom than 2024.06.00 is available: 2026.06.01"
+        errorLine1="composeBom = &quot;2024.06.00&quot;"
+        errorLine2="             ~~~~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="12"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.animation:animation than 1.6.8 is available: 1.11.4"
+        errorLine1="composeAnimation = &quot;1.6.8&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.animation:animation than 1.6.8 is available: 1.11.4"
+        errorLine1="composeAnimation = &quot;1.6.8&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.animation:animation than 1.6.8 is available: 1.11.4"
+        errorLine1="composeAnimation = &quot;1.6.8&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="13"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.10.1"
+        errorLine1="media3Exoplayer = &quot;1.3.1&quot;"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="16"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.10.1"
+        errorLine1="media3Exoplayer = &quot;1.3.1&quot;"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="16"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-exoplayer than 1.3.1 is available: 1.10.1"
+        errorLine1="media3Exoplayer = &quot;1.3.1&quot;"
+        errorLine2="                  ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="16"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.10.1"
+        errorLine1="media3Ui = &quot;1.3.1&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="17"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.10.1"
+        errorLine1="media3Ui = &quot;1.3.1&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="17"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.media3:media3-ui than 1.3.1 is available: 1.10.1"
+        errorLine1="media3Ui = &quot;1.3.1&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="17"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.material:material-icons-extended than 1.6.8 is available: 1.7.8"
+        errorLine1="materialIconsExtended = &quot;1.6.8&quot;"
+        errorLine2="                        ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="18"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.material:material-icons-extended than 1.6.8 is available: 1.7.8"
+        errorLine1="materialIconsExtended = &quot;1.6.8&quot;"
+        errorLine2="                        ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="18"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.compose.material:material-icons-extended than 1.6.8 is available: 1.7.8"
+        errorLine1="materialIconsExtended = &quot;1.6.8&quot;"
+        errorLine2="                        ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="18"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-compose than 2.7.7 is available: 2.9.8"
+        errorLine1="navigationCompose = &quot;2.7.7&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="19"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-compose than 2.7.7 is available: 2.9.8"
+        errorLine1="navigationCompose = &quot;2.7.7&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="19"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-compose than 2.7.7 is available: 2.9.8"
+        errorLine1="navigationCompose = &quot;2.7.7&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="19"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.4 is available: 2.11.0"
+        errorLine1="lifecycleViewmodelCompose = &quot;2.8.4&quot;"
+        errorLine2="                            ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="20"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.4 is available: 2.11.0"
+        errorLine1="lifecycleViewmodelCompose = &quot;2.8.4&quot;"
+        errorLine2="                            ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="20"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.4 is available: 2.11.0"
+        errorLine1="lifecycleViewmodelCompose = &quot;2.8.4&quot;"
+        errorLine2="                            ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="20"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0"
+        errorLine1="lifecycleRuntimeCompose = &quot;2.8.7&quot;"
+        errorLine2="                          ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="21"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0"
+        errorLine1="lifecycleRuntimeCompose = &quot;2.8.7&quot;"
+        errorLine2="                          ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="21"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.7 is available: 2.11.0"
+        errorLine1="lifecycleRuntimeCompose = &quot;2.8.7&quot;"
+        errorLine2="                          ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="21"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.hilt:hilt-navigation-compose than 1.1.0 is available: 1.4.0"
+        errorLine1="hiltNavigationCompose = &quot;1.1.0&quot;"
+        errorLine2="                        ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="22"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.hilt:hilt-navigation-compose than 1.1.0 is available: 1.4.0"
+        errorLine1="hiltNavigationCompose = &quot;1.1.0&quot;"
+        errorLine2="                        ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="22"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.hilt:hilt-navigation-compose than 1.1.0 is available: 1.4.0"
+        errorLine1="hiltNavigationCompose = &quot;1.1.0&quot;"
+        errorLine2="                        ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="22"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.8.4"
+        errorLine1="room = &quot;2.6.1&quot;"
+        errorLine2="       ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="23"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.security:security-crypto than 1.0.0 is available: 1.1.0"
+        errorLine1="securityCrypto = &quot;1.0.0&quot;"
+        errorLine2="                 ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="24"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.security:security-crypto than 1.0.0 is available: 1.1.0"
+        errorLine1="securityCrypto = &quot;1.0.0&quot;"
+        errorLine2="                 ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="24"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.security:security-crypto than 1.0.0 is available: 1.1.0"
+        errorLine1="securityCrypto = &quot;1.0.0&quot;"
+        errorLine2="                 ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="24"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.work:work-runtime-ktx than 2.9.0 is available: 2.11.2"
+        errorLine1="workRuntimeKtx = &quot;2.9.0&quot;"
+        errorLine2="                 ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="25"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.work:work-runtime-ktx than 2.9.0 is available: 2.11.2"
+        errorLine1="workRuntimeKtx = &quot;2.9.0&quot;"
+        errorLine2="                 ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="25"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.work:work-runtime-ktx than 2.9.0 is available: 2.11.2"
+        errorLine1="workRuntimeKtx = &quot;2.9.0&quot;"
+        errorLine2="                 ~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="25"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.health.connect:connect-client than 1.1.0-alpha10 is available: 1.1.0"
+        errorLine1="healthConnect = &quot;1.1.0-alpha10&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="26"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.health.connect:connect-client than 1.1.0-alpha10 is available: 1.1.0"
+        errorLine1="healthConnect = &quot;1.1.0-alpha10&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="26"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.health.connect:connect-client than 1.1.0-alpha10 is available: 1.1.0"
+        errorLine1="healthConnect = &quot;1.1.0-alpha10&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="26"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mediapipe:tasks-genai than 0.10.27 is available: 0.10.35"
+        errorLine1="mediapipeTasksGenai = &quot;0.10.27&quot;"
+        errorLine2="                      ~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="28"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mediapipe:tasks-genai than 0.10.27 is available: 0.10.35"
+        errorLine1="mediapipeTasksGenai = &quot;0.10.27&quot;"
+        errorLine2="                      ~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="28"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mediapipe:tasks-genai than 0.10.27 is available: 0.10.35"
+        errorLine1="mediapipeTasksGenai = &quot;0.10.27&quot;"
+        errorLine2="                      ~~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="28"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mlkit:translate than 17.0.2 is available: 17.0.3"
+        errorLine1="mlkitTranslate = &quot;17.0.2&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="29"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mlkit:translate than 17.0.2 is available: 17.0.3"
+        errorLine1="mlkitTranslate = &quot;17.0.2&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="29"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.mlkit:translate than 17.0.2 is available: 17.0.3"
+        errorLine1="mlkitTranslate = &quot;17.0.2&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="../gradle/libs.versions.toml"
+            line="29"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="            CameraPreview("
+        errorLine2="            ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/exercise/ExerciseScreen.kt"
+            line="279"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                        val pose = poseDetectorHelper.detectPoseBlocking(imageProxy)"
+        errorLine2="                                                      ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/exercise/ExerciseScreen.kt"
+            line="284"
+            column="55"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="            com.example.isekaikuroshin.ui.vfx.camera.VFXTestCameraScreen("
+        errorLine2="                                                     ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/MainActivity.kt"
+            line="790"
+            column="54"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                com.example.isekaikuroshin.ui.vfx.camera.VFXGestureCalibrationCameraScreen("
+        errorLine2="                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/MainActivity.kt"
+            line="807"
+            column="58"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                com.example.isekaikuroshin.ui.vfx.VFXOffsetCalibrationScreen("
+        errorLine2="                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/MainActivity.kt"
+            line="835"
+            column="51"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                CalibrationCameraScreen(navController = navController, sealId = sealId)"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/navigation/NavGraph.kt"
+            line="156"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="            VFXTestCameraScreen("
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/navigation/NavGraph.kt"
+            line="179"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                VFXGestureCalibrationCameraScreen("
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/navigation/NavGraph.kt"
+            line="197"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                com.example.isekaikuroshin.ui.vfx.VFXOffsetCalibrationScreen("
+        errorLine2="                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/navigation/NavGraph.kt"
+            line="224"
+            column="51"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="        CameraPreview("
+        errorLine2="        ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/physicaltraining/PhysicalTrainingScreen.kt"
+            line="329"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                    val pose = poseDetectorHelper.detectPoseBlocking(imageProxy)"
+        errorLine2="                                                  ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/physicaltraining/PhysicalTrainingScreen.kt"
+            line="333"
+            column="51"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="        CameraPreview("
+        errorLine2="        ~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/physicaltraining/PhysicalTrainingScreen.kt"
+            line="465"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                    val pose = poseDetectorHelper.detectPoseBlocking(imageProxy)"
+        errorLine2="                                                  ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/physicaltraining/PhysicalTrainingScreen.kt"
+            line="469"
+            column="51"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        val intent = Intent(applicationContext, MainActivity::class.java).apply {"
+        errorLine2="                                                ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/ReminderWorker.kt"
+            line="92"
+            column="49"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="                    PracticeSessionScreen("
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/sealpractice/SealPracticeScreen.kt"
+            line="227"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="            TriggerCalibrationScreen("
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/SpellStudioScreen.kt"
+            line="105"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.camera.core.ExperimentalGetImage` or `@OptIn(markerClass = androidx.camera.core.ExperimentalGetImage.class)`"
+        errorLine1="            SpellTestScreen("
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/SpellStudioScreen.kt"
+            line="121"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnsafeOptInUsageError"
+        message="This declaration is opt-in and its usage should be marked with `@androidx.media3.common.util.UnstableApi` or `@OptIn(markerClass = androidx.media3.common.util.UnstableApi.class)`"
+        errorLine1="        val intent = Intent(context, com.example.isekaikuroshin.MainActivity::class.java).apply {"
+        errorLine2="                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/SystemNotificationHelper.kt"
+            line="100"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="ModifierParameter"
+        message="Modifier parameter should be the first optional parameter"
+        errorLine1="    modifier: Modifier = Modifier"
+        errorLine2="    ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/components/CameraPreview.kt"
+            line="63"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ModifierParameter"
+        message="Modifier parameter should be the first optional parameter"
+        errorLine1="    modifier: Modifier = Modifier"
+        errorLine2="    ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/sealpractice/HandLandmarkOverlay.kt"
+            line="36"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ModifierParameter"
+        message="Modifier parameter should be the first optional parameter"
+        errorLine1="    modifier: Modifier = Modifier"
+        errorLine2="    ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/inventory/InventoryScreen.kt"
+            line="489"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ModifierParameter"
+        message="Modifier parameter should be the first optional parameter"
+        errorLine1="    modifier: Modifier = Modifier"
+        errorLine2="    ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/inventory/InventoryScreen.kt"
+            line="518"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ModifierParameter"
+        message="Modifier parameter should be the first optional parameter"
+        errorLine1="    modifier: Modifier = Modifier"
+        errorLine2="    ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/inventory/InventoryScreen.kt"
+            line="747"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="ModifierParameter"
+        message="Modifier parameter should be the first optional parameter"
+        errorLine1="    modifier: Modifier = Modifier"
+        errorLine2="    ~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/camera/VFXTestCameraScreen.kt"
+            line="842"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StateFlowValueCalledInComposition"
+        message="StateFlow.value should not be called within composition"
+        errorLine1="                        val targetLanguage = if (com.example.isekaikuroshin.data.LanguageManager.currentLanguage.value == &quot;EN&quot;) &quot;English&quot; else &quot;Turkish&quot;"
+        errorLine2="                                                                                                                 ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/HealthHubScreen.kt"
+            line="448"
+            column="114"/>
+    </issue>
+
+    <issue
+        id="StateFlowValueCalledInComposition"
+        message="StateFlow.value should not be called within composition"
+        errorLine1="            val gameData = PersistentDataManager.gameData.value"
+        errorLine2="                                                          ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/MainActivity.kt"
+            line="467"
+            column="59"/>
+    </issue>
+
+    <issue
+        id="StateFlowValueCalledInComposition"
+        message="StateFlow.value should not be called within composition"
+        errorLine1="            val gameData = PersistentDataManager.gameData.value"
+        errorLine2="                                                          ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/MainActivity.kt"
+            line="671"
+            column="59"/>
+    </issue>
+
+    <issue
+        id="StateFlowValueCalledInComposition"
+        message="StateFlow.value should not be called within composition"
+        errorLine1="                        text = &quot;${spellActionExecutor.particleManager.activeEmitters.value.size}&quot;,"
+        errorLine2="                                                                                     ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/SpellTestScreen.kt"
+            line="818"
+            column="86"/>
+    </issue>
+
+    <issue
+        id="UnclosedTrace"
+        message="The `beginSection()` call is not always closed with a matching `endSection()` because the code in between may return early"
+        errorLine1="        Trace.beginSection(&quot;ExerciseFrame&quot;)"
+        errorLine2="              ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/exercise/PerformanceTelemetry.kt"
+            line="45"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="UnclosedTrace"
+        message="The `beginSection()` call is not always closed with a matching `endSection()` because the code in between may throw an exception"
+        errorLine1="        Trace.beginSection(sectionName)"
+        errorLine2="              ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/exercise/PerformanceTelemetry.kt"
+            line="82"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="StringFormatInvalid"
+        message="Incorrect formatting string `quest_progress_completed`; missing conversion character in &apos;`% c`&apos;?"
+        errorLine1="    &lt;string name=&quot;quest_progress_completed&quot;>% completed&lt;/string>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="73"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="TrustAllX509TrustManager"
+        message="`checkClientTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
+        <location
+            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar"/>
+    </issue>
+
+    <issue
+        id="TrustAllX509TrustManager"
+        message="`checkClientTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
+        <location
+            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar"/>
+    </issue>
+
+    <issue
+        id="TrustAllX509TrustManager"
+        message="`checkServerTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
+        <location
+            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/AlarmScheduler.kt"
+            line="88"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/HealthHubScreen.kt"
+            line="1720"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/HealthHubScreen.kt"
+            line="1862"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/NotificationChannelManager.kt"
+            line="19"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP &amp;&amp; batteryManager != null) {"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/PerformanceManager.kt"
+            line="191"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/SystemNotificationHelper.kt"
+            line="40"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/SystemNotificationHelper.kt"
+            line="130"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/utils/UIUtils.kt"
+            line="96"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/utils/UIUtils.kt"
+            line="111"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 26"
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/utils/UIUtils.kt"
+            line="128"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="This folder configuration (`v26`) is unnecessary; `minSdkVersion` is 26. Merge all the resources in this folder into `mipmap-anydpi`.">
+        <location
+            file="src/main/res/mipmap-anydpi-v26"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `CharacterManager` which has field `context` pointing to `Context`); this is a memory leak"
+        errorLine1="/**"
+        errorLine2="^">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/CharacterManager.kt"
+            line="11"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields; this is a memory leak"
+        errorLine1="    private var context: Context? = null"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/CharacterManager.kt"
+            line="16"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `GameLogger` which has field `context` pointing to `Context`); this is a memory leak"
+        errorLine1="/**"
+        errorLine2="^">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/GameLogger.kt"
+            line="11"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields; this is a memory leak"
+        errorLine1="    private var context: Context? = null"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/GameLogger.kt"
+            line="22"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `MemoryManager` which has field `context` pointing to `Context`); this is a memory leak"
+        errorLine1="    // Strateji #3 Memory Manager"
+        errorLine2="    ^">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ai/GlobalAIManager.kt"
+            line="59"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `MediaDatabaseBuilder` which has field `context` pointing to `Context`); this is a memory leak"
+        errorLine1="    private var databaseBuilder: MediaDatabaseBuilder? = null"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/engine/MediaDatabaseHelper.kt"
+            line="14"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields (static reference to `StoryContextManager` which has field `context` pointing to `Context`); this is a memory leak"
+        errorLine1="object StoryContextManager {"
+        errorLine2="^">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/StoryContextManager.kt"
+            line="26"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="StaticFieldLeak"
+        message="Do not place Android context classes in static fields; this is a memory leak"
+        errorLine1="    private var context: Context? = null"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/StoryContextManager.kt"
+            line="28"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        errorLine1="    var cascadeCount by remember { mutableStateOf(action.cascadeCount) }"
+        errorLine2="                                   ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/ActionConfigurationScreen.kt"
+            line="796"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        errorLine1="    var playbackSpeed by remember { mutableStateOf(1f) }"
+        errorLine2="                                    ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/ActionConfigurationScreen.kt"
+            line="981"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        errorLine1="    var intensity by remember { mutableStateOf(1f) }"
+        errorLine2="                                ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/ActionConfigurationScreen.kt"
+            line="984"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        errorLine1="    var particleSize by remember { mutableStateOf(10f) }"
+        errorLine2="                                   ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/ActionConfigurationScreen.kt"
+            line="985"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        errorLine1="    var emissionRate by remember { mutableStateOf(50f) }"
+        errorLine2="                                   ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/ActionConfigurationScreen.kt"
+            line="986"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        errorLine1="    var triggerPreview by remember { mutableStateOf(0) }"
+        errorLine2="                                     ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/ActionConfigurationScreen.kt"
+            line="998"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        errorLine1="    var currentValue by remember { mutableStateOf(0f) }"
+        errorLine2="                                   ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/healthhub/AnimationUtils.kt"
+            line="41"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        errorLine1="    var selectedTab by remember { mutableStateOf(0) }"
+        errorLine2="                                  ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/quest/QuestScreen.kt"
+            line="38"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        errorLine1="    var zoomLevel by remember { mutableStateOf(1.0f) }"
+        errorLine2="                                ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/skilltree/SkillTreeScreen.kt"
+            line="54"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        errorLine1="    var negotiationPhase by remember { mutableStateOf(0) } // 0: Başlangıç, 1: Geçmiş, 2: Statlar, 3: Teklif"
+        errorLine2="                                       ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/dashboard/UmbrosTransitionScreen.kt"
+            line="69"
+            column="40"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        errorLine1="    var sensitivity by remember { mutableStateOf(0.80f) } // %80 varsayılan"
+        errorLine2="                                  ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/spellstudio/VoiceCommandDialog.kt"
+            line="46"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Assigning `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                time.value += 0.016f"
+        errorLine2="                     ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="154"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Assigning `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="            time.value = 0f"
+        errorLine2="                 ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="158"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                    cos(time.value * 20) * 20f,"
+        errorLine2="                             ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="169"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                    sin(time.value * 15) * 15f"
+        errorLine2="                             ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="170"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                    cos(time.value * 15 + 2f) * 15f,"
+        errorLine2="                             ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="173"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                    sin(time.value * 20 + 1f) * 20f"
+        errorLine2="                             ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="174"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                    cos(time.value * 18 + 1f) * 18f,"
+        errorLine2="                             ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="177"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                    sin(time.value * 12 + 3f) * 12f"
+        errorLine2="                             ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="178"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                val alpha = 0.7f + sin(time.value + index) * 0.2f"
+        errorLine2="                                            ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="183"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateValueProperty"
+        message="Reading `value` will cause an autoboxing operation. Use `floatValue` to avoid unnecessary allocations."
+        errorLine1="                val size = 30f + cos(time.value + index) * 10f"
+        errorLine2="                                          ~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/ui/vfx/effects/VFXEffects.kt"
+            line="184"
+            column="43"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.book_waiting` appears to be unused">
+        <location
+            file="src/main/res/raw/book_waiting.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_200` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_200&quot;>#FFBB86FC&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="3"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_500` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_500&quot;>#FF6200EE&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.purple_700` appears to be unused"
+        errorLine1="    &lt;color name=&quot;purple_700&quot;>#FF3700B3&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.teal_200` appears to be unused"
+        errorLine1="    &lt;color name=&quot;teal_200&quot;>#FF03DAC5&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.teal_700` appears to be unused"
+        errorLine1="    &lt;color name=&quot;teal_700&quot;>#FF018786&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.black` appears to be unused"
+        errorLine1="    &lt;color name=&quot;black&quot;>#FF000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.white` appears to be unused"
+        errorLine1="    &lt;color name=&quot;white&quot;>#FFFFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.defaultlaucnhericon` appears to be unused">
+        <location
+            file="src/main/res/mipmap-hdpi/defaultlaucnhericon.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.eye_effect` appears to be unused">
+        <location
+            file="src/main/res/raw/eye_effect.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_background` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_launcher_background.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_launcherdefault` appears to be unused">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcherdefault.webp"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_location_pin` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_location_pin.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.icon_agi_seviye1` appears to be unused">
+        <location
+            file="src/main/res/drawable/icon_agi_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.icon_str_seviye1` appears to be unused">
+        <location
+            file="src/main/res/drawable/icon_str_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_0_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_0_0_0_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_0_0_0_0_0_1_002` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_0_0_0_0_0_1_002.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_0_6n14_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_0_6n14_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_4n10_2n12_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_4n10_2n12_0_0_0_2_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_0_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_0_e4_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_0_e4_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_3_002` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_002.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_3_003` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_003.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_3_004` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_004.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_4_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_4_002` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_002.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_4_003` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_003.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_4_004` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_004.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_5_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_5_002` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_002.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_0_5_003` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_003.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_2n12_0_0_a11_3_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_a11_3_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_4n10_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_4n10_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_4n10_0_0_0_5_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_4n10_0_0_0_5_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f1_6n14_5n13_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_5n13_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f2_0_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f2_0_0_0_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f2_6n14_5n13_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f2_6n14_5n13_0_0_0_2_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f2_6n14_6n14_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f2_6n14_6n14_0_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f2_6p02_s01_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f2_6p02_s01_0_0_0_2_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_f2_6p02_s01_0_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_f2_6p02_s01_0_0_0_3_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_l1_6n14_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_l1_6n14_0_0_0_0_1_001.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.p_l1_s01_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/drawable/p_l1_s01_0_0_0_0_1_001.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.page_turn` appears to be unused">
+        <location
+            file="src/main/res/raw/page_turn.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.pht_journey` appears to be unused">
+        <location
+            file="src/main/res/drawable/pht_journey.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.pht_journey_1` appears to be unused">
+        <location
+            file="src/main/res/drawable/pht_journey_1.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.pht_journey_2` appears to be unused">
+        <location
+            file="src/main/res/drawable/pht_journey_2.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.reverse_page_turning` appears to be unused">
+        <location
+            file="src/main/res/raw/reverse_page_turning.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.life_stats` appears to be unused"
+        errorLine1="    &lt;string name=&quot;life_stats&quot;>Life Stats&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="5"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.main_stats` appears to be unused"
+        errorLine1="    &lt;string name=&quot;main_stats&quot;>Main Stats&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="6"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.elemental_affinities` appears to be unused"
+        errorLine1="    &lt;string name=&quot;elemental_affinities&quot;>Elemental Affinities&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="7"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.hp` appears to be unused"
+        errorLine1="    &lt;string name=&quot;hp&quot;>HP&lt;/string>"
+        errorLine2="            ~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="10"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.mp` appears to be unused"
+        errorLine1="    &lt;string name=&quot;mp&quot;>MP&lt;/string>"
+        errorLine2="            ~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="11"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.stamina` appears to be unused"
+        errorLine1="    &lt;string name=&quot;stamina&quot;>STAMINA&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="12"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.hunger` appears to be unused"
+        errorLine1="    &lt;string name=&quot;hunger&quot;>HUNGER&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="13"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.fatigue` appears to be unused"
+        errorLine1="    &lt;string name=&quot;fatigue&quot;>FATIGUE&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="14"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.strength` appears to be unused"
+        errorLine1="    &lt;string name=&quot;strength&quot;>STRENGTH&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="15"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.agility` appears to be unused"
+        errorLine1="    &lt;string name=&quot;agility&quot;>AGILITY&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="16"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.intelligence` appears to be unused"
+        errorLine1="    &lt;string name=&quot;intelligence&quot;>INTELLIGENCE&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="17"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.vitality` appears to be unused"
+        errorLine1="    &lt;string name=&quot;vitality&quot;>VITALITY&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="18"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.spirit` appears to be unused"
+        errorLine1="    &lt;string name=&quot;spirit&quot;>SPIRIT&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="19"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.luck` appears to be unused"
+        errorLine1="    &lt;string name=&quot;luck&quot;>LUCK&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="20"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.fire` appears to be unused"
+        errorLine1="    &lt;string name=&quot;fire&quot;>Fire&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="23"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.water` appears to be unused"
+        errorLine1="    &lt;string name=&quot;water&quot;>Water&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="24"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.earth` appears to be unused"
+        errorLine1="    &lt;string name=&quot;earth&quot;>Earth&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="25"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.wind` appears to be unused"
+        errorLine1="    &lt;string name=&quot;wind&quot;>Wind&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="26"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.lightning` appears to be unused"
+        errorLine1="    &lt;string name=&quot;lightning&quot;>Lightning&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="27"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.ice` appears to be unused"
+        errorLine1="    &lt;string name=&quot;ice&quot;>Ice&lt;/string>"
+        errorLine2="            ~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="28"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.light` appears to be unused"
+        errorLine1="    &lt;string name=&quot;light&quot;>Light&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="29"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.dark` appears to be unused"
+        errorLine1="    &lt;string name=&quot;dark&quot;>Dark&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="30"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.level` appears to be unused"
+        errorLine1="    &lt;string name=&quot;level&quot;>Level&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="33"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.confirm` appears to be unused"
+        errorLine1="    &lt;string name=&quot;confirm&quot;>Confirm&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="34"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.cancel` appears to be unused"
+        errorLine1="    &lt;string name=&quot;cancel&quot;>Cancel&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="35"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.unspent_points` appears to be unused"
+        errorLine1="    &lt;string name=&quot;unspent_points&quot;>Unspent Points&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="36"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.pending_points` appears to be unused"
+        errorLine1="    &lt;string name=&quot;pending_points&quot;>Pending Points&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="37"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.titles_and_badges` appears to be unused"
+        errorLine1="    &lt;string name=&quot;titles_and_badges&quot;>Titles and Badges&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="40"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.skills` appears to be unused"
+        errorLine1="    &lt;string name=&quot;skills&quot;>Skills&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="41"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.stat_allocation_hint` appears to be unused"
+        errorLine1="    &lt;string name=&quot;stat_allocation_hint&quot;>Tap + to allocate points&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="42"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.badge` appears to be unused"
+        errorLine1="    &lt;string name=&quot;badge&quot;>Badge&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="45"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.skill` appears to be unused"
+        errorLine1="    &lt;string name=&quot;skill&quot;>Skill&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="46"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.adaptation_skill` appears to be unused"
+        errorLine1="    &lt;string name=&quot;adaptation_skill&quot;>Adaptation Skill&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="47"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.choose_exercise` appears to be unused"
+        errorLine1="    &lt;string name=&quot;choose_exercise&quot;>Choose Exercise&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="50"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.exercise_pushup` appears to be unused"
+        errorLine1="    &lt;string name=&quot;exercise_pushup&quot;>Push-up&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="51"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.exercise_situp` appears to be unused"
+        errorLine1="    &lt;string name=&quot;exercise_situp&quot;>Sit-up&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="52"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.exercise_jumprope` appears to be unused"
+        errorLine1="    &lt;string name=&quot;exercise_jumprope&quot;>Jump Rope&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="53"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.settings` appears to be unused"
+        errorLine1="    &lt;string name=&quot;settings&quot;>Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="56"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.service_settings` appears to be unused"
+        errorLine1="    &lt;string name=&quot;service_settings&quot;>Service Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="57"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.game_settings` appears to be unused"
+        errorLine1="    &lt;string name=&quot;game_settings&quot;>Game Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="58"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.ui_settings` appears to be unused"
+        errorLine1="    &lt;string name=&quot;ui_settings&quot;>UI Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="59"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.story_ai_settings` appears to be unused"
+        errorLine1="    &lt;string name=&quot;story_ai_settings&quot;>Story &amp;amp; AI Settings&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="60"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.ancient_techniques` appears to be unused"
+        errorLine1="    &lt;string name=&quot;ancient_techniques&quot;>Ancient Techniques&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="63"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.element_affinity` appears to be unused"
+        errorLine1="    &lt;string name=&quot;element_affinity&quot;>Element Affinity&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="64"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.mana_core` appears to be unused"
+        errorLine1="    &lt;string name=&quot;mana_core&quot;>Mana Core&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="65"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.qi_cultivation` appears to be unused"
+        errorLine1="    &lt;string name=&quot;qi_cultivation&quot;>Qi Cultivation&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="66"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.main_quests` appears to be unused"
+        errorLine1="    &lt;string name=&quot;main_quests&quot;>Main Quests&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="69"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.side_quests` appears to be unused"
+        errorLine1="    &lt;string name=&quot;side_quests&quot;>Side Quests&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="70"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.no_main_quest_yet` appears to be unused"
+        errorLine1="    &lt;string name=&quot;no_main_quest_yet&quot;>No main quests yet&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="71"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.main_quest_badge` appears to be unused"
+        errorLine1="    &lt;string name=&quot;main_quest_badge&quot;>MAIN QUEST&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="72"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.quest_progress_completed` appears to be unused"
+        errorLine1="    &lt;string name=&quot;quest_progress_completed&quot;>% completed&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="73"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.quest_giver` appears to be unused"
+        errorLine1="    &lt;string name=&quot;quest_giver&quot;>Giver:&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="74"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.quest_due_day` appears to be unused"
+        errorLine1="    &lt;string name=&quot;quest_due_day&quot;>Due Day:&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="75"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f1_5n13_s16_e2_n7_a11_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f1_5n13_s16_e2_n7_a11_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f1_6p02_5p03_e1_0_a7_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f1_6p02_5p03_e1_0_a7_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f1_6p02_s01_e1_n4_a8_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f1_6p02_s01_e1_n4_a8_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_0_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_0_0_0_0_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_0_s08_e3_0_0_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_0_s08_e3_0_0_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_2n12_e5_n11_a10_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_2n12_e5_n11_a10_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_2p07_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_2p07_0_0_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_2p07_0_0_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_2p07_0_0_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_2p07_0_0_a6_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_2p07_0_0_a6_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_2p07_e5_n1_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_2p07_e5_n1_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_4p05_e1_n1_a7_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_4p05_e1_n1_a7_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_5n13_0_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_5n13_0_0_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_6p02_e2_n1_a1_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_6p02_e2_n1_a1_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_6p02_e2_n1_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_6p02_e2_n1_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_6p02_e5_n11_a10_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_6p02_e5_n11_a10_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_6p02_e5_n11_a10_2_002` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_6p02_e5_n11_a10_2_002.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s01_0_n2_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s01_0_n2_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_0_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_0_0_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_0_0_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_0_0_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_0_0_a1_2_002` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_0_0_a1_2_002.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_0_0_a1_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_0_0_a1_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_0_n11_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_0_n11_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e1_0_a11_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e1_0_a11_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e1_0_a1_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e1_0_a1_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e2_0_a12_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e2_0_a12_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e5_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e5_0_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e5_0_a12_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e5_0_a12_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e5_0_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e5_0_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e5_n10_a12_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e5_n10_a12_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e5_n11_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e5_n11_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e5_n11_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e5_n11_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s09_e5_n1_a1_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s09_e5_n1_a1_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s16_e5_n11_a10_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s16_e5_n11_a10_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1n15_s16_e5_n11_a11_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1n15_s16_e5_n11_a11_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1p04_3p06_e4_n3_a4_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1p04_3p06_e4_n3_a4_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1p04_3p06_e4_n5_a4_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1p04_3p06_e4_n5_a4_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1p04_5p03_e4_n3_a4_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1p04_5p03_e4_n3_a4_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_1p04_5p03_e4_n4_a4_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_1p04_5p03_e4_n4_a4_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_4n10_0_0_0_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_4n10_0_0_0_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_4n10_0_0_0_4_002` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_4n10_0_0_0_4_002.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_4n10_0_0_0_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_4n10_0_0_0_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_6n14_0_n11_a12_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_6n14_0_n11_a12_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_6n14_e3_n7_a12_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_6n14_e3_n7_a12_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_s09_0_n11_a12_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_s09_0_n11_a12_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_s16_0_n10_a11_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_s16_0_n10_a11_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2n12_s16_e5_n5_a12_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2n12_s16_e5_n5_a12_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2p07_s01_e2_n1_a6_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2p07_s01_e2_n1_a6_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_2p07_s09_e2_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_2p07_s09_e2_0_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_3n11_0_e1_n8_a9_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_3n11_0_e1_n8_a9_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_3n11_s08_e3_0_a1_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_3n11_s08_e3_0_a1_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_3p06_1p04_e4_n3_a4_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_3p06_1p04_e4_n3_a4_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_3p06_1p04_e4_n5_a4_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_3p06_1p04_e4_n5_a4_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_3p06_5p03_e2_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_3p06_5p03_e2_0_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_3p06_5p03_e4_n3_a4_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_3p06_5p03_e4_n3_a4_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_4n10_2n12_e3_n4_0_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_4n10_2n12_e3_n4_0_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_4p05_0_0_0_a4_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_4p05_0_0_0_a4_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_1n15_0_0_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_1n15_0_0_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_2n12_e2_n7_a11_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_2n12_e2_n7_a11_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_3n11_0_n9_a11_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_3n11_0_n9_a11_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_3n11_e1_n1_a11_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_3n11_e1_n1_a11_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_5n13_e2_0_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_5n13_e2_0_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_6n14_0_0_a10_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_6n14_0_0_a10_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_6n14_0_n7_a11_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_6n14_0_n7_a11_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_6n14_e3_n4_a2_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_6n14_e3_n4_a2_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_6n14_e3_n7_a2_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_6n14_e3_n7_a2_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_s16_e3_n6_a5_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_s16_e3_n6_a5_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_s16_e3_n7_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_s16_e3_n7_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5n13_s16_e3_n7_a12_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5n13_s16_e3_n7_a12_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5p03_3p06_e4_n5_a4_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5p03_3p06_e4_n5_a4_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_5p03_3p06_e4_n6_a4_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_5p03_3p06_e4_n6_a4_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_1n15_e1_0_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_1n15_e1_0_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_2p07_e2_n2_a11_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_2p07_e2_n2_a11_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_2p07_e2_n2_a1_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_2p07_e2_n2_a1_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_3n11_e2_n7_a2_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_3n11_e2_n7_a2_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_3n11_e3_n10_a11_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_3n11_e3_n10_a11_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_3n11_e3_n9_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_3n11_e3_n9_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_5n13_0_n7_a7_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_5n13_0_n7_a7_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_6p02_0_0_a7_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_6p02_0_0_a7_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_s16_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_s16_0_0_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6n14_s16_0_n10_a12_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6n14_s16_0_n10_a12_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_1n15_0_n11_a12_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_1n15_0_n11_a12_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_1n15_0_n2_a1_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_1n15_0_n2_a1_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_1n15_e2_n2_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_1n15_e2_n2_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_2p07_0_0_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_2p07_0_0_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_2p07_0_0_a2_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_2p07_0_0_a2_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_2p07_e2_n1_a1_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_2p07_e2_n1_a1_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_2p07_e2_n4_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_2p07_e2_n4_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_2p07_e4_n6_a4_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_2p07_e4_n6_a4_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_3n11_e2_n2_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_3n11_e2_n2_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_3p06_e5_n11_a10_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_3p06_e5_n11_a10_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_5p03_e2_n1_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_5p03_e2_n1_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_6n14_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_6n14_0_0_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_6n14_0_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_6n14_0_0_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_6n14_0_0_0_3_002` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_6n14_0_0_0_3_002.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_6n14_0_0_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_6n14_0_0_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_6n14_0_n11_a12_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_6n14_0_n11_a12_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_6n14_e3_n8_a1_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_6n14_e3_n8_a1_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_6p02_s08_e2_n4_a8_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_6p02_s08_e2_n4_a8_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s01_6n14_0_0_0_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s01_6n14_0_0_0_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s01_6n14_0_0_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s01_6n14_0_0_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s01_6n14_0_0_a2_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s01_6n14_0_0_a2_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s01_6p02_0_0_0_5_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s01_6p02_0_0_0_5_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s01_6p02_0_n2_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s01_6p02_0_n2_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s01_6p02_e2_n2_a2_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s01_6p02_e2_n2_a2_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s01_6p02_e2_n6_a6_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s01_6p02_e2_n6_a6_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s08_4n10_e3_n5_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s08_4n10_e3_n5_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s08_6n14_e3_n4_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s08_6n14_e3_n4_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s08_s09_0_n7_a2_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s08_s09_0_n7_a2_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s09_1n15_e1_n1_a1_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s09_1n15_e1_n1_a1_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s09_1n15_e2_n2_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s09_1n15_e2_n2_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s09_1n15_e2_n2_a1_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s09_1n15_e2_n2_a1_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s09_4n10_e3_n10_a10_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s09_4n10_e3_n10_a10_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s09_4n10_e3_n10_a12_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s09_4n10_e3_n10_a12_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s09_6n14_0_0_a11_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s09_6n14_0_0_a11_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_f2_s09_s08_e5_n5_a10_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_f2_s09_s08_e5_n5_a10_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_0_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_0_0_0_0_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_0_0_0_0_0_1_002` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_0_0_0_0_0_1_002.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_0_0_0_0_0_1_003` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_0_0_0_0_0_1_003.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_0_0_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_0_0_0_0_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_0_0_0_0_0_2_002` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_0_0_0_0_0_2_002.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_0_0_e4_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_0_0_e4_0_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_2p07_6p02_0_n2_a1_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_2p07_6p02_0_n2_a1_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_5n13_3n11_e2_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_5n13_3n11_e2_0_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_5n13_3n11_e2_n7_a11_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_5n13_3n11_e2_n7_a11_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_5n13_6n14_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_5n13_6n14_0_0_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_5n13_6n14_e1_0_a11_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_5n13_6n14_e1_0_a11_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_6p02_6n14_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_6p02_6n14_0_0_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_6p02_6n14_e5_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_6p02_6n14_e5_0_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_s09_4n10_e3_n10_a10_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_s09_4n10_e3_n10_a10_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_s16_0_e3_0_a12_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_s16_0_e3_0_a12_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p1_s16_6n14_e3_n9_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p1_s16_6n14_e3_n9_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_0_0_0_0_0_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_0_0_0_0_0_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_0_0_0_0_0_2_002` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_0_0_0_0_0_2_002.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_0_0_0_0_0_3_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_0_0_0_0_0_3_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_0_0_0_0_0_4_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_0_0_0_0_0_4_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_5p03_3p06_0_n3_a4_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_5p03_3p06_0_n3_a4_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_6n14_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_6n14_0_0_0_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_s01_6p02_0_0_a2_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_s01_6p02_0_0_a2_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_s01_6p02_e4_n6_a2_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_s01_6p02_e4_n6_a2_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_p2_s09_5n13_e1_0_a11_2_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_p2_s09_5n13_e1_0_a11_2_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_u1_0_0_0_0_0_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_u1_0_0_0_0_0_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.v_u1_s01_6p02_0_n1_a1_1_001` appears to be unused">
+        <location
+            file="src/main/res/raw/v_u1_s01_6p02_0_n1_a1_1_001.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.vid_journey` appears to be unused">
+        <location
+            file="src/main/res/raw/vid_journey.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.vid_journey_1` appears to be unused">
+        <location
+            file="src/main/res/raw/vid_journey_1.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.vid_journey_2` appears to be unused">
+        <location
+            file="src/main/res/raw/vid_journey_2.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.vid_journey_3` appears to be unused">
+        <location
+            file="src/main/res/raw/vid_journey_3.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.vid_journey_4` appears to be unused">
+        <location
+            file="src/main/res/raw/vid_journey_4.mp4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.raw.vid_umbros_1` appears to be unused">
+        <location
+            file="src/main/res/raw/vid_umbros_1.mp4"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_dark.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_dark.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_dark.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_dark.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_dark.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_divine.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_divine.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_divine.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_divine.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_divine.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_light.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_light.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_light.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_light.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_mystery.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_mystery.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_mystery.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_mystery.png"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        message="The application adaptive icon is missing a monochrome tag"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        message="The application adaptive roundIcon is missing a monochrome tag"
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ic_launcher_dark.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_dark.png: 341x341 dp (512x512 px), mipmap-mdpi/ic_launcher_dark.png: 512x512 dp (512x512 px), mipmap-xhdpi/ic_launcher_dark.png: 256x256 dp (512x512 px), mipmap-xxhdpi/ic_launcher_dark.png: 171x171 dp (512x512 px), mipmap-xxxhdpi/ic_launcher_dark.png: 128x128 dp (512x512 px)">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_dark.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ic_launcher_divine.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_divine.png: 341x341 dp (512x512 px), mipmap-mdpi/ic_launcher_divine.png: 512x512 dp (512x512 px), mipmap-xhdpi/ic_launcher_divine.png: 256x256 dp (512x512 px), mipmap-xxhdpi/ic_launcher_divine.png: 171x171 dp (512x512 px), mipmap-xxxhdpi/ic_launcher_divine.png: 128x128 dp (512x512 px)">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_divine.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ic_launcher_light.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-mdpi/ic_launcher_light.png: 512x512 dp (512x512 px), mipmap-xhdpi/ic_launcher_light.png: 256x256 dp (512x512 px), mipmap-xxhdpi/ic_launcher_light.png: 171x171 dp (512x512 px), mipmap-xxxhdpi/ic_launcher_light.png: 128x128 dp (512x512 px)">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_light.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_light.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_light.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_light.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        message="The image `ic_launcher_mystery.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-mdpi/ic_launcher_mystery.png: 512x512 dp (512x512 px), mipmap-xhdpi/ic_launcher_mystery.png: 256x256 dp (512x512 px), mipmap-xxhdpi/ic_launcher_mystery.png: 171x171 dp (512x512 px), mipmap-xxxhdpi/ic_launcher_mystery.png: 128x128 dp (512x512 px)">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_mystery.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_mystery.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_mystery.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_mystery.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/camp.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/camp.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/closed_mystical_book.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/closed_mystical_book.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_00.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_00.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_01.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_01.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_02.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_02.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_03.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_03.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_04.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_04.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_05.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_05.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_06.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_06.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_07.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_07.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_08.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_08.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_09.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_09.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_10.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_10.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_10_1.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_10_1.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_11.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_11.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_12.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_12.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_13.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_13.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_14.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_14.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_15.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_15.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_16.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_16.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/demon_bg_17.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/demon_bg_17.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_agi_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_agi_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_fatigue_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_fatigue_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_hunger_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_hunger_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_int_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_int_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_kilic_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_kilic_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_luck_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_luck_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_mainstat_agi.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_mainstat_agi.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_mainstat_int.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_mainstat_int.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_mainstat_str.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_mainstat_str.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_mainstat_vit.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_mainstat_vit.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_map_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_map_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_race_human.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_race_human.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_skill_adaptation.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_skill_adaptation.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_spirit_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_spirit_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_str_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_str_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_vit_seviye1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_vit_seviye1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/left_page.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/left_page.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_0_0_0_0_0_1_001.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_0_0_0_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_0_0_0_0_0_1_002.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_0_0_0_0_0_1_002.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_0_6n14_0_0_0_1_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_0_6n14_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_4n10_2n12_0_0_0_2_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_4n10_2n12_0_0_0_2_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_0_0_0_0_1_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_0_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_0_e4_0_0_1_001.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_0_e4_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_1_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_3_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_3_002.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_002.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_3_003.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_003.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_3_004.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_004.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_4_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_4_002.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_002.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_4_003.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_003.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_4_004.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_004.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_5_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_5_002.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_002.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_0_5_003.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_003.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_2n12_0_0_a11_3_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_a11_3_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_4n10_0_0_0_1_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_4n10_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_4n10_0_0_0_5_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_4n10_0_0_0_5_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f1_6n14_5n13_0_0_0_1_001.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_5n13_0_0_0_1_001.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f2_0_0_0_0_0_1_001.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f2_0_0_0_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f2_6n14_5n13_0_0_0_2_001.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f2_6n14_5n13_0_0_0_2_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f2_6n14_6n14_0_0_0_1_001.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f2_6n14_6n14_0_0_0_1_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f2_6p02_s01_0_0_0_2_001.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f2_6p02_s01_0_0_0_2_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_f2_6p02_s01_0_0_0_3_001.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_f2_6p02_s01_0_0_0_3_001.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_l1_6n14_0_0_0_0_1_001.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_l1_6n14_0_0_0_0_1_001.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/p_l1_s01_0_0_0_0_1_001.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/p_l1_s01_0_0_0_0_1_001.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/pht_journey.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/pht_journey.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/pht_journey_1.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/pht_journey_1.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/pht_journey_2.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/pht_journey_2.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/right_page.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/right_page.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: p_l1_6n14_0_0_0_0_1_001.png, ic_launcher_dark.png, ic_launcher_dark.png, ic_launcher_dark.png, ic_launcher_dark.png, ic_launcher_dark.png">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_dark.png"/>
+        <location
+            file="src/main/res/drawable/p_l1_6n14_0_0_0_0_1_001.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: p_l1_s01_0_0_0_0_1_001.png, ic_launcher_divine.png, ic_launcher_divine.png, ic_launcher_light.png, ic_launcher_mystery.png, ic_launcher_divine.png, ic_launcher_light.png, ic_launcher_mystery.png, ic_launcher_divine.png, ic_launcher_light.png, ic_launcher_mystery.png, ic_launcher_divine.png, ic_launcher_light.png, ic_launcher_mystery.png">
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_mystery.png"/>
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_light.png"/>
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_mystery.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_light.png"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_mystery.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_light.png"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_mystery.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_light.png"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_divine.png"/>
+        <location
+            file="src/main/res/drawable/p_l1_s01_0_0_0_0_1_001.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_00.jpg, p_f1_0_6n14_0_0_0_1_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_0_6n14_0_0_0_1_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_00.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_10.jpg, p_f1_4n10_2n12_0_0_0_2_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_4n10_2n12_0_0_0_2_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_10.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_01.jpg, p_f1_6n14_0_0_0_0_1_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_0_0_0_0_1_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_01.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_11.jpg, p_f1_6n14_2n12_0_0_0_3_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_11.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_12.jpg, p_f1_6n14_2n12_0_0_0_3_002.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_002.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_12.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_14.jpg, p_f1_6n14_2n12_0_0_0_3_003.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_003.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_14.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_15.jpg, p_f1_6n14_2n12_0_0_0_3_004.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_3_004.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_15.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_13.jpg, p_f1_6n14_2n12_0_0_0_4_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_13.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_16.jpg, p_f1_6n14_2n12_0_0_0_4_002.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_002.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_16.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_17.jpg, p_f1_6n14_2n12_0_0_0_4_003.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_003.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_17.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_09.jpg, p_f1_6n14_2n12_0_0_0_4_004.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_4_004.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_09.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_05.jpg, p_f1_6n14_2n12_0_0_0_5_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_05.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_06.jpg, p_f1_6n14_2n12_0_0_0_5_002.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_002.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_06.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_08.jpg, p_f1_6n14_2n12_0_0_0_5_003.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_0_5_003.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_08.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_10_1.jpg, p_f1_6n14_2n12_0_0_a11_3_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_2n12_0_0_a11_3_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_10_1.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_04.jpg, p_f1_6n14_4n10_0_0_0_1_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_4n10_0_0_0_1_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_04.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_07.jpg, p_f1_6n14_4n10_0_0_0_5_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_4n10_0_0_0_5_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_07.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: demon_bg_02.jpg, p_f1_6n14_5n13_0_0_0_1_001.jpg">
+        <location
+            file="src/main/res/drawable/p_f1_6n14_5n13_0_0_0_1_001.jpg"/>
+        <location
+            file="src/main/res/drawable/demon_bg_02.jpg"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: closed_mystical_book.png, pht_journey.png">
+        <location
+            file="src/main/res/drawable/pht_journey.png"/>
+        <location
+            file="src/main/res/drawable/closed_mystical_book.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        message="The following unrelated icon files have identical contents: pht_journey_2.png, right_page.png">
+        <location
+            file="src/main/res/drawable/right_page.png"/>
+        <location
+            file="src/main/res/drawable/pht_journey_2.png"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="113"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="135"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="138"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="141"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="144"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="148"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.camera:camera-lifecycle:1.3.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="151"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;androidx.camera:camera-view:1.3.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="152"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="153"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="156"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="159"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="162"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="165"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="168"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="169"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="172"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="175"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;com.google.firebase:firebase-firestore-ktx&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="178"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    implementation(&quot;com.google.firebase:firebase-auth-ktx&quot;)"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="179"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="180"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1=""
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="183"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="ConstantLocale"
+        message="Assigning `Locale.getDefault()` to a final static field is suspicious; this code will not work correctly if the user changes locale while the app is running"
+        errorLine1="    private val dateFormat = SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;, Locale.getDefault())"
+        errorLine2="                                                                     ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/example/isekaikuroshin/utils/GameLogger.kt"
+            line="23"
+            column="70"/>
+    </issue>
+
+</issues>
