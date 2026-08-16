@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "ContentRegistry.kt quest descriptionKey i18n string'leri (secret degil, generic-api-key false positive)"
+paths = [
+  '''app/src/main/java/com/example/isekaikuroshin/data/ContentRegistry\.kt''',
+]
