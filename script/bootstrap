@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Scripts to Rule Them All: script/bootstrap (isekai-kuroshin — Android/Gradle)
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if command -v gradle >/dev/null 2>&1; then
+  echo "[bootstrap] gradle bulundu: $(gradle --version 2>/dev/null | grep Gradle | head -1)"
+fi
+if [ -f "$ROOT/gradlew" ] || [ -f "$ROOT/gradlew.bat" ]; then
+  echo "[bootstrap] gradle wrapper mevcut — 'gradlew assembleDebug' ile derleyin"
+else
+  echo "[bootstrap] Android Studio veya 'gradle wrapper' gerekli" >&2
+fi
+
+if [ -f "$ROOT/tools/kuroshin_insight_dashboard/requirements.txt" ]; then
+  echo "[bootstrap] insight dashboard requirements kuruluyor..."
+  python3 -m pip install --quiet -r "$ROOT/tools/kuroshin_insight_dashboard/requirements.txt" || true
+fi
+
+echo "[bootstrap] tamam"

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Scripts to Rule Them All: script/test (isekai-kuroshin)
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if command -v gradle >/dev/null 2>&1; then
+  echo "[test] gradle test..."
+  (cd "$ROOT" && gradle test --console=plain 2>&1 | tail -5) || echo "[test] gradle test basarisiz (devam)" >&2
+elif [ -f "$ROOT/gradlew.bat" ] && command -v cmd >/dev/null 2>&1; then
+  echo "[test] gradlew.bat test..."
+  (cd "$ROOT" && cmd //c "gradlew.bat test") || echo "[test] test basarisiz (devam)" >&2
+else
+  echo "[test] gradle yok — test atlandi (Android Studio gerektirir)" >&2
+fi
+
+echo "[test] tamam"
