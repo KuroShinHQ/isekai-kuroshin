@@ -24,6 +24,11 @@ jobs:
       - name: Setup Gradle cache
         uses: gradle/actions/setup-gradle@v3
 
+      # NOT: Windows'tan commit edilen wrapper 100644 kaydedilir → 126 permission
+      # denied. Acik chmod (gizli degil, bilinen Windows git davranisi).
+      - name: Make gradlew executable
+        run: chmod +x gradlew && ./gradlew --version
+
       - name: Kotlin compile (assembleDebug — hata gizlenmez)
         run: ./gradlew assembleDebug --console=plain --no-daemon
 
