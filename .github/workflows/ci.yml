@@ -29,6 +29,34 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew && ./gradlew --version
 
+      # google-services.json GERCEK anahtarlar icerdigi icin gitignore'ludur.
+      # CI'da derleme icin gecerli FORMATTA stub uretilir (gercek anahtar DEGIL).
+      - name: Generate google-services.json stub
+        run: |
+          cat > app/google-services.json <<'JSON'
+          {
+            "project_info": {
+              "project_number": "0",
+              "project_id": "ci-stub-project",
+              "storage_bucket": "ci-stub-project.appspot.com"
+            },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:0:android:0000000000000000000000",
+                  "android_client_info": { "package_name": "com.example.isekaikuroshin" }
+                },
+                "oauth_client": [],
+                "api_key": [
+                  { "current_key": "AIzaSyA-Stub-Stub-Stub-Stub-Stub-Stub" }
+                ],
+                "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+              }
+            ],
+            "configuration_version": "1"
+          }
+          JSON
+
       - name: Kotlin compile (assembleDebug — hata gizlenmez)
         run: ./gradlew assembleDebug --console=plain --no-daemon
 
