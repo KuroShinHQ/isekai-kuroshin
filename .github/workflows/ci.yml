@@ -9,16 +9,34 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
-      - name: Gradle wrapper check
-        run: |
-          if [ -f gradlew ]; then chmod +x gradlew && ./gradlew --version; fi
-      - name: Kotlin compile (assembleDebug)
-        run: |
-          if [ -f gradlew ]; then ./gradlew assembleDebug --console=plain 2>&1 | tail -5; fi
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Gradle cache
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Kotlin compile (assembleDebug — hata gizlenmez)
+        run: ./gradlew assembleDebug --console=plain --no-daemon
+
+      - name: Unit tests (testDebugUnitTest — hata gizlenmez)
+        run: ./gradlew testDebugUnitTest --console=plain --no-daemon
+
+      - name: Upload test results (fail olsa bile)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: app/build/reports/tests/testDebugUnitTest/
+          retention-days: 7
 
   secrets:
     runs-on: ubuntu-latest

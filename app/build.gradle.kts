@@ -20,6 +20,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testOptions {
+            // android.util.Log cagrilari birim testlerde no-op olur (Robolectric gerekmez)
+            unitTests.isReturnDefaultValues = true
+        }
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -182,6 +186,7 @@ dependencies {
     implementation("com.android.billingclient:billing-ktx:7.1.1")
 
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
